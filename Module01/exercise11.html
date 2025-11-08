@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>[Bài tập] Bài tập về các thẻ table và form</h1>
+    <p>
+      <b>Bài 1:</b> Tạo bảng có chứa thông tin sản phẩm trong cửa hàng của bạn:
+    </p>
+    <table border="1">
+      <h2><i>My store</i></h2>
+      <thead>
+        <th>Item Photo</th>
+        <th>Name</th>
+        <th>Price</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <img
+              width="200"
+              src="https://media2.popsugar-assets.com/files/thumbor/5bDtJLUd5u858BagEWhcAXZ8EG4/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2012/11/47/1/192/1922195/574f46474ab2683d_shutterstock_49887109/i/Oranges.jpg"
+              alt="Oranges"
+            />
+          </td>
+          <td>Oranges</td>
+          <td>$1ea.</td>
+        </tr>
+        <tr>
+          <td><img src="" alt="Bananas" /></td>
+          <td>Bananas</td>
+          <td>$0.75/lb</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              width="200"
+              src="https://www.nutritionalhealthenterprises.com/wp-content/uploads/2023/04/Pomegranate-FB.png"
+              alt="Pomegranates"
+            />
+          </td>
+          <td>Pomegranates</td>
+          <td>3 for $5</td>
+        </tr>
+        <tr>
+          <td><img src="" alt="Gummy Bears" /></td>
+          <td>Gummy Bears</td>
+          <td>$6 per bag</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              width="200"
+              src="https://www.chowhound.com/img/gallery/how-to-choose-the-best-broccoli-at-the-grocery-store-every-time/intro-1734580840.jpg"
+              alt="Broccoli"
+            />
+          </td>
+          <td>Broccoli</td>
+          <td>$3 a head</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><b>Bài 2:</b> Tạo form đặt phòng khách sạn:</p>
+    <form action="">
+      <h2>Booking Form</h2>
+      <label for="name">Name</label>
+      <input type="text" /><br />
+      <label for="email">Email</label>
+      <input type="text" /><br />
+      <label for="phone">Phone</label>
+      <input type="number" /><br />
+      <label for="date">Date</label>
+      <input type="date" /><br />
+      <label for="time">Time</label>
+      <input type="time" /><br />
+      <label for="">Number of guess</label>
+      <input type="number" /><br />
+      <button>Submit</button>
+    </form>
+    <p><b>Bài 3:</b> Tạo form mua xe</p>
+    <form action="">
+      <h2>Car Purchase Form</h2>
+      <label for="name">Name:</label>
+      <input type="text" /><br />
+      <label for="email">Email:</label>
+      <input type="text" /><br />
+      <label for="phone">Phone:</label>
+      <input type="number" /><br />
+      <label for="">Choose a Car:</label>
+      <select name="choose a car" selected>
+        <option value="">Model 1</option>
+        <option value="">Model 2</option>
+        <option value="">Model 3</option>
+      </select>
+      <br />
+      <label for="">Choose a Color:</label>
+      <select name="choose a color" selected>
+        <option value="">Red</option>
+        <option value="">Black</option>
+        <option value="">White</option>
+      </select>
+      <br />
+      <label for="quantity">Quantity:</label>
+      <input type="text" /><br />
+      <label for="date">Delivery date:</label>
+      <input type="date" /><br />
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
