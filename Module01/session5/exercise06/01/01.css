@@ -1,0 +1,19 @@
+img {
+    width: fit-content;
+    height: 300px;
+}
+
+th {
+     display: inline-block;
+}
+
+p {
+    background-color: rgba(90, 89, 89, 0.3);
+    position: absolute;
+    top: 260px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
