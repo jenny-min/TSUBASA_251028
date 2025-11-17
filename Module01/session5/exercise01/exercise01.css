@@ -1,0 +1,7 @@
+button {
+    padding: 10px 30px;
+    border-left: 10px groove purple;
+    border-top: 5px solid red;
+    border-right: 5px dotted blue;
+    border-bottom: 5px double green;
+}
