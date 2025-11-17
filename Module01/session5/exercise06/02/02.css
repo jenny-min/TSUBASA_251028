@@ -1,0 +1,8 @@
+.content {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    font-weight: bold;
+    font-size: larger;
+}
