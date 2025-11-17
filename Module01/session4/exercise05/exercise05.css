@@ -1,0 +1,13 @@
+h1 {
+    color: orange;
+}
+
+.tip {
+    background-color: lightgoldenrodyellow;
+    border-left: 5px solid orange;
+    padding: 10px;
+}
+
+.tip b {
+    color: orange;
+}
