@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-origin: padding-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.box-parent {
+    height: 500px;
+    width: 500px;
+    border: 1px solid gray;
+    background-color: lightblue;
+    position: relative;
+    /* position relative nó lấy vị trí đang đứng làm tọa độ thông qua 4 thuộc tính top, bottom, left, right. Có thể có giá trị âm và ghi đè lên các element khác */
+    top: 20px;
+    left: 20px;
+    /* nếu phần tử đó đứng 1 mình thì nó sẽ lấy trình duyệt làm góc tọa độ (trên cùng bên trái) */
+}
+
+/* absolute được áp dụng khi và chỉ khi phần tử cha có thuộc tính position có giá trị bất kỳ khác static */
+
+.box-children {
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+.btn-back {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    /* dựa vào trình duyệt làm cha */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: o;
+    background-color: rgba(0, 0, 0, 0);
+}
+.form {
+    background-color: #fff;
+    width: 500px;
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.navbar {
+    height: 50px;
+    width: 100%;
+    background-color: blue;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}

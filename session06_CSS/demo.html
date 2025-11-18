@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- style internal -->
+    <style>
+      * {
+        /* dấu * được đặt đầu file CSS dùng để định nghĩ thuộc tính của cả trang web, hay còn gọi là Univer selector */
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      div {
+        color: blue;
+      }
+
+      #div-1 {
+        font-size: 30px;
+        color: red;
+      }
+
+      #div-2 {
+        color: blueviolet;
+      }
+
+      .box {
+        border: 2px gray solid;
+      }
+
+      .box-title {
+        text-align: center;
+        line-height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- style inline -->
+    <h1
+      style="
+        color: white;
+        background-color: blue;
+        font-size: 24px;
+        font-weight: 900;
+      "
+    >
+      Welcome to Rikkei Education
+    </h1>
+
+    <div id="div-1">Demo về style internal</div>
+    <div id="div-2">Demo về style internal 1</div>
+    <div class="box">
+      <h1 class="box-title">Box</h1>
+    </div>
+
+    <h2 class="demo-external">Demo CSS External</h2>
+  </body>
+</html>

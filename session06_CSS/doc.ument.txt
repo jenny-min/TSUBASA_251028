@@ -1,0 +1,5 @@
+Khi học CSS, thì nên học theo từng nhóm
++ Văn bản
++ Màu nền
++ Vị trí
++ 
