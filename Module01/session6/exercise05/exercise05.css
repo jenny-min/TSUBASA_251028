@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+}
+/* hsl(78.62deg 100% 94.31%)
+hsl(195deg 100% 97.65%)
+hsl(0deg 0% 20%)
+hsl(0deg 0% 95.69%) */
+
+.header {
+    background-color: #4caf50;
+    color: #ffffff;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.header-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+.header-list {
+    text-align: right;
+}
+
+.header-list ul {
+    display: flex;
+    justify-items: center;
+}
+
+.header-list li {
+    list-style: none;
+}
+
+.header-list a {
+    text-decoration: none;
+    color: #ffffff;
+}
+.content {
+}
+.bnt {
+}
+.feature {
+}
+.feature-title {
+}
+.feature-list {
+}
+.contact {
+}
