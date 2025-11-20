@@ -8,12 +8,9 @@ body {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 16px;
 }
-/* hsl(78.62deg 100% 94.31%)
-hsl(195deg 100% 97.65%)
-hsl(0deg 0% 20%)
-hsl(0deg 0% 95.69%) */
 
 .header {
+    display: flex;
     background-color: #4caf50;
     color: #ffffff;
     padding: 20px;
@@ -24,13 +21,10 @@ hsl(0deg 0% 95.69%) */
     font-size: 20px;
     font-weight: 500;
 }
-.header-list {
-    text-align: right;
-}
 
-.header-list ul {
+.header-list {
     display: flex;
-    justify-items: center;
+    gap: 20px;
 }
 
 .header-list li {
@@ -41,15 +35,56 @@ hsl(0deg 0% 95.69%) */
     text-decoration: none;
     color: #ffffff;
 }
+
 .content {
+    padding: 100px;
+    background-color: #f4f4f4;
+    text-align: center;
+    justify-content: center;
+}
+
+.content-title {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.content p {
+    padding: 20px 0;
 }
 .bnt {
+    padding: 10px 30px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
 }
-.feature {
+
+.feature { 
+    padding: 20px 10px;
+    justify-content: center;
+    align-items: center; 
 }
-.feature-title {
+
+.feature-list ul {
+    display: flex;
+    justify-content: space-between;
 }
-.feature-list {
+
+.feature-list li {
+    background-color: #dddddd;
+    border-radius: 4px;
+    list-style: none;
+    padding: 20px 100px;
 }
+
+.feature-list li a {
+    text-decoration: none;
+    color: #807f7f;
+}
+
 .contact {
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
 }
