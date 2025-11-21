@@ -1,0 +1,60 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  position: relative;
+  height: 100vh;
+}
+
+.accordion {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  font-family: sans-serif;
+}
+
+
+.accordion input {
+  display: none;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f8f9fa;
+  font-size: 16px;
+  position: relative;
+}
+
+/* Mũi tên */
+.accordion-header::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #555;
+  border-bottom: 2px solid #555;
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+  position: absolute;
+  right: 20px;
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  padding: 0 16px;
+  transition: max-height 0.3s ease;
+}
