@@ -1,0 +1,61 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  position: relative;
+  height: 100vh;
+}
+
+.container {
+  width: 600px;
+  border: 1px solid #dadada;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.header {
+  border-left: 5px solid #ff6116;
+  margin-bottom: 12px;
+}
+
+.header-title {
+  margin-left: 12px;
+  text-transform: uppercase;
+}
+
+.image-group {
+  width: 100%;
+  display: flex;
+}
+
+.image-item {
+  width: 50%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 12px 0;
+}
+
+.content {
+  color: #848484;
+  font-size: 16px;
+}
+
+.driven {
+  border-top: 1px solid #eaeaea;
+  margin: 20px 0;
+}
