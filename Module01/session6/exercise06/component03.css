@@ -1,0 +1,47 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  position: relative;
+  height: 100vh;
+}
+
+.container {
+  padding: 30px;
+  background-color: #f2f2f2;
+  display: flex;
+}
+
+.content {
+    justify-content: center;
+    align-items: center; 
+}
+
+.content li a {
+    color: #356479;
+    font-size: 15px;
+    font-family: 300;
+}
+
+.image-item {
+  width: 50%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 12px 0;
+}
+
+.content {
+  color: #848484;
+  font-size: 16px;
+}
