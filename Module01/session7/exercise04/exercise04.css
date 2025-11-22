@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.header {
+    background-color: #3498db;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    height: 100vh;
+    margin: 20px 0;
+}
+
+.sidebar {
+    width: calc(30%);
+    background-color: #2ecc71;
+    padding: 20px;
+}
+
+.content {
+    width: calc(70%);
+    background-color: #e74c3c;
+    padding: 20px;
+}
+
+.footer {
+    background-color: #9b59b6;
+    padding: 20px;
+}
