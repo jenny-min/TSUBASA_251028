@@ -8,17 +8,32 @@
   </head>
   <body>
     <div class="container">
-      <div class="item big">Big</div>
-      <div class="item small">Small 1</div>
-      <div class="item small">Small 2</div>
-      <div class="item small">Small 3</div>
-      <div class="item small">Small 4</div>
-
-      <div class="item big">Big</div>
-      <div class="item small">Small 5</div>
-      <div class="item small">Small 6</div>
-      <div class="item small">Small 7</div>
-      <div class="item small">Small 8</div>
+      <div class="flex-container">
+        <div class="item big">Big</div>
+        <div class="item-group">
+          <div class="item-group-small">
+            <div class="item small">Small 1</div>
+            <div class="item small">Small 2</div>
+          </div>
+          <div class="item-group-small">
+            <div class="item small">Small 3</div>
+            <div class="item small">Small 4</div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-container">
+        <div class="item big">Big</div>
+        <div class="item-group">
+          <div class="item-group-small">
+            <div class="item small">Small 5</div>
+            <div class="item small">Small 6</div>
+          </div>
+          <div class="item-group-small">
+            <div class="item small">Small 7</div>
+            <div class="item small">Small 8</div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
