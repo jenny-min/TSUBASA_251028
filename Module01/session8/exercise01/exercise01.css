@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    background-color: #add8e6;
+    border: 1px solid #cdcbcb;
+    width: calc(50%);
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.large {
+    width: calc(100%);
+}
+
+@media screen and (max-width: 1024px) {
+  .flex-item {
+    width: calc(100%);
+  }
+}
