@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.box {
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px;
+    background-color: red;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+/* XS - extra small < 576px */
+@media screen and (max-width: 576px) {
+    .box {
+        background-color: blue;
+    }
+}
+
+/* SM -  small 576px < 768px */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .box {
+        background-color: aqua;
+    }
+}
+
+/* MD - medium 768px - 992px  */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .box {
+        background-color: brown;
+    }
+}
+
+/* LG - large 992px - 1200px  */
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    .box {
+        background-color: yellow;
+    }
+}
+
+/* LG - large 1200px - 1400px  */
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+    .box {
+        background-color: yellow;
+    }
+}
+
+/* XL - extra large 1200px - 1400px  */
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+    .box {
+        background-color: chartreuse;
+    }
+}
+
+/* XXL - extra extra large 1400px  */
+@media screen and (min-width: 1401px) {
+    .box {
+        background-color: cornflowerblue;
+    }
+}

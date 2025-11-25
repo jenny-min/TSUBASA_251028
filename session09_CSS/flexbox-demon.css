@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.flex-container {
+    height: 100vh; /*vh: view height*/
+    display: flex; /*thuộc tính quan trọng và là tiền đề để sử dụng nhũng thuộc tính khác*/
+    flex-direction: row; /*dùng để thay đổi hướng hiển thị của trục*/
+    justify-content: center;/*luôn luôn đi với trục main axis */
+    align-items: center;/*luôn luôn đi với trục cross axis*/
+    flex-wrap: wrap;/* cho các phần tử trong flex-container xuống hàng khi kích thước màn hình không đủ */
+    gap: 10px;
+}
+
+.flex-item {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;/*giúp căn chỉnh theo  trục cross-axis*/
+    
+}
+
+.item-1 {
+    order: 1;
+    flex: 1;
+}
+
+.item-2 {
+    order: 2;
+    flex: 3; /* 100% - tổng chiều dài đã biết */
+}
+
+.item-3 {
+    order: 3;
+    flex:2;
+}
+
