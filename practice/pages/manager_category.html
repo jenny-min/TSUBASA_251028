@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý danh mục</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/manager_category.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- menu -->
+      <menu class="menu">
+        <div>
+          <img src="../public/images/logo-menu.png" alt="Logo menu" />
+        </div>
+
+        <div class="tabs">
+          <a class="tab-item">
+            <i class="fa-solid fa-house"></i>
+            <span class="tab-title">Thống kê</span>
+          </a>
+          <a class="tab-item tab-active">
+            <i class="fa-solid fa-list"></i>
+            <span class="tab-title">Danh mục</span>
+          </a>
+          <a class="tab-item">
+            <i class="fa-brands fa-product-hunt"></i>
+            <span class="tab-title">Sản phẩm</span>
+          </a>
+        </div>
+      </menu>
+      <!-- Nội dung -->
+      <div class="main">
+        <header class="header">
+          <div class="header-right">
+            <i class="fa-solid fa-bell"></i>
+            <img
+              class="avatar"
+              src="https://khoinguonsangtao.vn/wp-content/uploads/2022/02/anh-dai-dien-fb-dep.jpg"
+              alt=""
+            />
+          </div>
+        </header>
+        <main class="main-content">
+          <!-- Tiêu đè trang -->
+          <div class="content-header">
+            <h3 class="title">Danh mục</h3>
+            <button class="button">Thêm mới danh mục</button>
+          </div>
+          <!-- Thanh chức năng Toolbar -->
+          <div class="content-toolbar">
+            <select class="select-status">
+              <option value="">Tất cả</option>
+              <option value="">Đang hoạt động</option>
+              <option value="">Ngừng hoạt động</option>
+            </select>
+            <div class="input-search-container">
+              <input
+                placeholder="Tìm kiếm theo tên"
+                class="input-search"
+                type="text"
+              />
+              <i class="icon-search fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+          <!-- Danh sách -->
+          <div class="list-category">
+            <table border="1" class="table">
+              <thead class="thead">
+                <tr>
+                  <th>Mã danh mục</th>
+                  <th>Tên danh mục</th>
+                  <th>Trạng thái</th>
+                  <th>Chức năng</th>
+                </tr>
+              </thead>
+              <tbody class="tbody">
+                <tr>
+                  <td>DM001</td>
+                  <td>Quần áo</td>
+
+                  <td>
+                    <div class="box-status bg-active">
+                      <div class="dot dot-active"></div>
+                      <span class="status-text text-active"
+                        >Đang hoạt động</span
+                      >
+                    </div>
+                  </td>
+                  <td style="width: 146px">
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DM001</td>
+                  <td>Quần áo</td>
+                  <td>Đang hoạt động</td>
+                  <td style="width: 146px">
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DM001</td>
+                  <td>Quần áo</td>
+                  <td>Đang hoạt động</td>
+                  <td style="width: 146px">
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DM001</td>
+                  <td>Quần áo</td>
+
+                  <td>
+                    <div class="box-status bg-active">
+                      <div class="dot dot-active"></div>
+                      <span class="status-text text-active"
+                        >Đang hoạt động</span
+                      >
+                    </div>
+                  </td>
+                  <td style="width: 146px">
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DM001</td>
+                  <td>Quần áo</td>
+                  <td>Đang hoạt động</td>
+                  <td style="width: 146px">
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DM001</td>
+                  <td>Quần áo</td>
+                  <td>Đang hoạt động</td>
+                  <td style="width: 146px">
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination -->
+          <div class="pagination">
+            <button><i class="fa-solid fa-angle-left"></i></button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>...</button>
+            <button><i class="fa-solid fa-angle-right"></i></button>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Form thêm mới danh mục -->
+    <div class="overlay">
+      <form class="form">Form thêm mới danh mục</form>
+    </div>
+  </body>
+</html>
