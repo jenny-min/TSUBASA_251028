@@ -14,6 +14,8 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     background-color: #090707;
+    padding-left: 70px;
+    padding-right: 70px;
 }
 
 .navbar {
@@ -111,21 +113,253 @@ body {
 
 .website {
     color: #ffffff;
+    text-align: center;
+    padding-top: 150px;
 }
-.title {
+
+.website-container {
+    width: 755px;
+    height: 93px;
+    margin: 0 auto;
+    margin-bottom: 50px;
 }
+
+.website-title {
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 19px;
+}
+
 .website-content {
+    font-size: 22px;
+    font-weight: 400;
 }
 .website-group {
+    display: flex;
+    gap: 25px;
+    /* margin-bottom: 24px; */
 }
+
 .website-item {
+    padding: 39px 24px 59px 24px;
 }
+
+.website-item-logo {
+    height: 62px;
+    width: 62px;
+}
+
+.website-item-title {
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 14px;
+}
+
+.website-item-content {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 25px;
+}
+
 .e-commerce {
     background-color: #C96408;
 }
+
 .portfolio {
     background-color: #7937BB;
 }
+
 .marketing {
     background-color: #3775ED;
+}
+
+.technology {
+    background-color: #1A1919;
+    position: relative;
+    padding: 112px 281px 107px 282px;
+    margin-top: 25px;
+}
+
+.technology-title {
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.technology-content {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 31px;
+}
+
+.image-item-group {
+    width: 60px;
+    height: 60px;
+}
+
+.webflow-item {
+    position: absolute;
+    left: 96px;
+    top: 33px;
+}
+
+.r-item {
+    position: absolute;
+    bottom: 100px;
+    left: 36px;
+}
+
+.javascript-item {
+    position: absolute;
+    bottom: 40px;
+    left: 211px;
+}
+
+.b-item {
+    position: absolute;
+    top: 25px;
+    right: 531px;
+}
+
+.reactjs-item {
+    position: absolute;
+    top: 29px;
+    right: 213px;
+}
+
+.vue-item {
+    position: absolute;
+    top: 93px;
+    right: 36px;
+}
+
+.python-item {
+    position: absolute;
+    bottom: 55px;
+    right: 91px;
+}
+
+.js-item {
+    position: absolute;
+    bottom: 33px;
+    right: 319px;
+}
+
+.driven {
+    border: 1px solid #282828;
+    margin: 80px 0 50px 0;
+}
+
+.feature {  
+    color: #ffffff;
+    text-align: center;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-title {
+    font-size: 48px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    text-align: left;
+}
+.feature-content {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 31px;
+    padding-bottom: 77px;
+    text-align: left;
+}
+
+.feature-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-bottom: 100px;
+}
+.feature-item {
+    width: 282px;
+    height: 304px;
+}
+
+.feedback {
+    color: #ffffff;
+    text-align: center; 
+    margin-bottom: 157px;
+}
+.feedback-title {
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+.feedback-content {
+    font-size: 22px;
+    font-weight: 400;
+    padding-bottom: 72px;
+}
+.feedback-group {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 33px 27px;
+}
+.user-feedback {
+    background-color: #1A1919;
+    width: 378px;
+    height: 152px;
+    padding: 17px 21px 0 21px;
+    position: relative;
+}
+.user-feedback-content {
+    font-size: 14px;
+    line-height: 20px;
+}
+.user-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    position: absolute;
+    bottom: 17px;
+}
+.user-image {
+    width: 30px;
+    height: 30px;
+}
+.username {
+    font-size: 16px;
+}
+
+.invitation {
+    color: #ffffff;
+    text-align: center;
+    background-color: #3775ED;
+    padding: 48px 0 47px 0;
+}
+.invitation-title {
+    font-size: 50px;
+    font-weight: 700;
+    padding-bottom: 24px;
+}
+.invitation-description {
+    font-size: 22px;
+    padding-bottom: 36px;
+}
+
+.invitation .button {
+    background-color: #1A1919;
+}
+
+.footer {
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 28px;
+    padding-bottom: 59px;
+}
+.social-icon-list {
+    display: flex;
+    gap: 19px;
 }
