@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quản lý danh sách sinh viên</h1>
+
+      <div class="form">
+        <input id="name" placeholder="Tên sinh viên" />
+        <input id="age" type="number" placeholder="Tuổi" />
+        <input id="class" placeholder="Lớp" />
+        <button class="add-btn" onclick="addStudent()">Thêm sinh viên</button>
+      </div>
+
+      <input
+        id="search"
+        class="search"
+        placeholder="Tìm kiếm sinh viên..."
+        onkeyup="render()"
+      />
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tên</th>
+            <th>Tuổi</th>
+            <th>Lớp</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody id="list"></tbody>
+      </table>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
