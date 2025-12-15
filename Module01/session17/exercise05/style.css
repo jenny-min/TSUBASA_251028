@@ -1,0 +1,23 @@
+body {
+    background-image: url(https://bizweb.dktcdn.net/thumb/grande/100/461/189/files/cau-cong-vang.jpg?v=1704627874873);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.login-box {
+    border: 1px solid #000000;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    top: 50%;
+    background-color: #ffffff;
+}
+
+button {
+    padding: 10px 70px;
+    background-color: #f82007;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+}
