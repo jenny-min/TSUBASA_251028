@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form onsubmit="handleSubmit(event)" class="form-register" action="">
+        <h3>Register</h3>
+        <div>
+          <label for="email">Email:</label><br />
+          <input
+            id="email-input"
+            type="text"
+            placeholder="Enter your email address"
+          />
+        </div>
+        <p id="email-error" class="error">Email không được để trống</p>
+
+        <div>
+          <label for="password">Password:</label><br />
+          <input
+            id="password-input"
+            type="password"
+            placeholder="Enter your password"
+          />
+        </div>
+        <p id="password-error" class="error">Mật khẩu không được để trống</p>
+
+        <div>
+          <label for="">Confirm Password:</label><br />
+          <input
+            id="password-confirm"
+            type="password"
+            placeholder="Enter your confirm password"
+          />
+        </div>
+        <p id="wrong-password" class="error">Mật khẩu không trùng khớp</p>
+
+        <button type="submit" class="btn-register">Register</button>
+      </form>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
