@@ -98,8 +98,11 @@
     font-weight: 600;
     text-decoration: none;
 }
+.hidden {
+    display: none;
+}
 
-@media (min-width: 450px) {
+@media screen and (max-width: 600px) {
     .login-container {
         padding: 64px 16px;
     }
@@ -131,5 +134,23 @@
     .remember-account span {
     color: #344054;
     font-size: 14px;
+    }
+
+    .show-mobile {
+        display: block;
+    }
+
+    .hidden-mobile {
+        display: none;
+    }
+
+    .form-function {
+        margin-bottom: 34px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .hidden {
+        display: none;
     }
 }
