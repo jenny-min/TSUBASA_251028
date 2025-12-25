@@ -4,8 +4,199 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/product_manager.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <h1>Trang quản lý sản phẩm</h1>
+    <div class="product-container">
+      <sidebar class="sidebar">
+        <div class="sidebar-header">
+          <img
+            src="../utils/images/product_manager_images/ecommerce.png"
+            alt=""
+          />
+        </div>
+        <div class="sidebar-body">
+          <div class="sidebar-list">
+            <i class="fa-solid fa-house"></i>
+            <p class="list-item">Thống kê</p>
+          </div>
+          <div class="sidebar-list">
+            <i class="fa-solid fa-money-bills"></i>
+            <p class="list-item">Danh mục</p>
+          </div>
+          <div class="sidebar-list">
+            <i class="fa-solid fa-folder"></i>
+            <p class="list-item">Sản phẩm</p>
+          </div>
+        </div>
+      </sidebar>
+      <section class="-section-product">
+        <header class="section-header">
+          <div class="header-nav">
+            <i class="fa-solid fa-bell"></i>
+            <img
+              class="user-img"
+              src="../utils/images/product_manager_images/user_img.png"
+              alt=""
+            />
+          </div>
+          <div class="section-container">
+            <div class="header-title">
+              <h1 class="title">Danh mục</h1>
+              <button class="add-btn">Thêm mới danh mục</button>
+            </div>
+            <div class="header-interaction">
+              <div class="status-bar">
+                <select class="status-select" name="" id="">
+                  <option value="">Tất cả</option>
+                  <option value="" selected>Đang hoạt động</option>
+                  <option value="">Ngừng hoạt động</option>
+                </select>
+              </div>
+              <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm danh mục theo tên" />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </div>
+          </div>
+        </header>
+        <main class="section-main section-container">
+          <div class="table-list">
+            <table border="1" class="table">
+              <thead class="thead">
+                <tr>
+                  <th>
+                    Mã danh mục
+                    <span><i class="fa-solid fa-arrow-down"></i></span>
+                  </th>
+                  <th>
+                    Tên danh mục<span
+                      ><i class="fa-solid fa-arrow-down"></i
+                    ></span>
+                  </th>
+                  <th>Trạng thái</th>
+                  <th>Chức năng</th>
+                </tr>
+              </thead>
+              <tbody class="tbody">
+                <tr>
+                  <td>DM001</td>
+                  <td>Quần áo</td>
+
+                  <td>
+                    <div class="box-status bg-active">
+                      <div class="dot dot-active"></div>
+                      <span class="status-text text-active"
+                        >Đang hoạt động</span
+                      >
+                    </div>
+                  </td>
+                  <td style="width: 146px">
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DM001</td>
+                  <td>Quần áo</td>
+                  <td>Đang hoạt động</td>
+                  <td style="width: 146px">
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DM001</td>
+                  <td>Quần áo</td>
+                  <td>Đang hoạt động</td>
+                  <td style="width: 146px">
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DM001</td>
+                  <td>Quần áo</td>
+
+                  <td>
+                    <div class="box-status bg-active">
+                      <div class="dot dot-active"></div>
+                      <span class="status-text text-active"
+                        >Đang hoạt động</span
+                      >
+                    </div>
+                  </td>
+                  <td style="width: 146px">
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DM001</td>
+                  <td>Quần áo</td>
+                  <td>Đang hoạt động</td>
+                  <td style="width: 146px">
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DM001</td>
+                  <td>Quần áo</td>
+                  <td>Đang hoạt động</td>
+                  <td style="width: 146px">
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination -->
+          <div class="pagination">
+            <button><i class="fa-solid fa-angle-left"></i></button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>...</button>
+            <button><i class="fa-solid fa-angle-right"></i></button>
+          </div>
+        </main>
+        <!-- Form thêm mới danh mục -->
+        <!-- <div class="overlay">
+          <form class="form">
+            <h4 class="form-title">Thêm mới danh mục</h4>
+            <label>Mã danh mục</label>
+            <br />
+            <input type="text" />
+            <br />
+            <label for="">Tên danh mục</label>
+            <br />
+            <input type="text" />
+            <br />
+            <label for="">Trạng thái</label>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="" />
+                Checkbox
+              </label>
+              <label>
+                <input type="checkbox" value="" />
+                Checkbox
+              </label>
+            </div>
+          </form>
+        </div> -->
+      </section>
+    </div>
   </body>
 </html>
