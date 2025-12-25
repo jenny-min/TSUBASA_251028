@@ -6,40 +6,56 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/register.css" />
-    <link rel="stylesheet" href="../css/login.css" />
   </head>
   <body>
     <div class="register-container">
       <form class="form" action="">
         <header class="form-header">
-          <h3 class="title">Đăng nhập</h3>
-          <p class="description">
-            Đăng nhập tài khoản để sử dụng hệ thống quản lý.
-          </p>
+          <h3 class="title">Đăng ký tài khoản</h3>
+          <p class="description">Đăng ký tài khoản để sử dụng dịch vụ</p>
         </header>
         <main class="form-body">
+          <div class="form-group-name">
+            <div class="form-group">
+              <label class="form-label" for="">Họ và tên đệm</label>
+              <input class="form-input" type="text" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="">Tên</label>
+              <input class="form-input" type="text" />
+            </div>
+          </div>
           <div class="form-group">
-            <label class="form-label" for="">Email:</label>
+            <label class="form-label" for="">Email</label>
+            <input
+              class="form-input"
+              type="text"
+              placeholder="you@company.com"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="">Mật khẩu</label>
             <input class="form-input" type="text" />
           </div>
           <div class="form-group">
-            <label class="form-label" for="">Mật khẩu:</label>
+            <label class="form-label" for="">Xác nhận mật khẩu</label>
             <input class="form-input" type="text" />
           </div>
           <div class="form-function">
-            <div class="remember-account">
+            <div class="agree">
               <input class="input-checkbox" type="checkbox" />
-              <span>Nhớ tài khoản</span>
-            </div>
-            <div class="forgot-account">
-              <a href="">Quên mật khẩu</a>
+              <span
+                >Bạn đồng ý với <a href="">chính sách và điều khoản</a></span
+              >
             </div>
           </div>
         </main>
         <footer class="form-footer">
-          <button class="form-button">Đăng nhập</button>
+          <button class="form-button">Đăng ký</button>
           <p class="form-redirect">
-            <span>Bạn chưa có tài khoản?<a href="./login.html"></a></span>
+            <span
+              >Bạn đã có tài khoản?<a href="./login.html">Đăng nhập</a></span
+            >
           </p>
         </footer>
       </form>

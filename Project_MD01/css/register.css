@@ -4,3 +4,76 @@
     align-items: center;
     height: 100vh;
 }
+.form {
+    width: 480px;
+}
+.form-header {
+}
+.title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #101828;
+    margin-bottom: 20px;
+}
+.description {
+    font-size: 20px;
+    font-weight: 400;
+    color: #667085;
+    margin-bottom: 24px;
+}
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+.form-group-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #344054;
+}
+.form-input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    outline: none;
+}
+.form-function {
+    margin-bottom: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #344054;
+}
+.agree {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.agree a {
+    color: #007AFF;
+    font-weight: 600;
+    text-decoration: none;
+}
+.input-checkbox {
+    width: 20px;
+    height: 20px;
+}
+.form-footer {
+}
+.form-button {
+}
+.form-redirect {
+}
