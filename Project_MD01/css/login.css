@@ -104,7 +104,7 @@
 
 @media screen and (max-width: 600px) {
     .login-container {
-        padding: 64px 16px;
+        padding: 0 16px;
     }
     .form-header {
         text-align: center;
@@ -129,6 +129,10 @@
     .form-label {
     color: #344054;
     font-size: 14px;
+    }
+
+    .form-button {
+        margin-bottom: 0;
     }
 
     .remember-account span {
