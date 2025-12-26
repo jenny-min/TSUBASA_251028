@@ -223,7 +223,7 @@
     color: #b91c1c;
 }
 
-
+/* Pagination */
 
 .pagination {
     height: 44px;
@@ -237,9 +237,11 @@
     height: 32px;
     width: 32px;
     border-radius: 4px;
+    color: #051B44;
     font-size: 14px;
-    border: 1px solid #051344;
     cursor: pointer;
+    border: 1px solid #D8DAE5;
+
 }
 
 .pagination button i {
@@ -251,22 +253,106 @@
     background-color: #0066ff;
 }
 
-
+/* Overlay */
 .overlay {
     position: fixed;
-    /* top: 0;
-    left: 0;
-    bottom: 0;
-    top: 0; */
     inset:0;
-    background-color: rgb(0, 0, 0, 0.5);
+    background-color: #00000080;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #344054;
 }
 
 .form {
     background-color: #ffffff;
-    width: 500;
+    width: 500px;
     margin: 0 auto;
+    padding: 24px;
+}
+
+.form-title-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-title-group i {
+    color: #000000;
+    font-size: 16px;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 24px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 24px;
+}
+
+.form input {
+    padding: 12px 16px;
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+}
+
+.form-item {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #A1A1AA;
+}
+
+.checkbox-group {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    gap: 15px;
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.checkbox label {
+    font-weight: 400;
+    color: #000000;
+}
+.button-group {
+    margin-top: 24px;
+    display: flex;
+    justify-content: right;
+    gap: 12px;
+}
+
+.btn-overlay {
+    border: 1px solid #E4E4E7;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 13px 20px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.btn-overlay:hover {
+    color: #ffffff;
+    background-color: #007AFF;
+}
+
+.hidden {
+    display: none;
 }
