@@ -177,19 +177,19 @@
         </main>
       </section>
       <!-- Form thêm mới danh mục -->
-      <div class="overlay hidden">
+      <!-- <div class="overlay hidden">
         <form class="form">
           <div class="form-title-group">
             <h4 class="form-title">Thêm mới danh mục</h4>
             <i class="fa-solid fa-x"></i>
           </div>
           <div class="form-container form-error">
-            <label class="form-item">Mã danh mục</label>
+            <label class="form-item">Mã danh mục <span>*</span></label>
             <input type="text" />
             <p class="input-error">Mã danh mục không được để trống</p>
           </div>
           <div class="form-container form-error">
-            <label class="form-item" for="">Tên danh mục</label>
+            <label class="form-item" for="">Tên danh mục <span>*</span></label>
             <input type="text" />
             <p class="input-error">Tên danh mục không được để trống</p>
           </div>
@@ -212,8 +212,44 @@
             <button class="btn-overlay">Thêm</button>
           </div>
         </form>
+      </div> -->
+      <!-- Form cập nhật danh mục -->
+      <div class="overlay hidden">
+        <form class="form">
+          <div class="form-title-group">
+            <h4 class="form-title">Cập nhật danh mục</h4>
+            <i class="fa-solid fa-x"></i>
+          </div>
+          <div class="form-container form-error">
+            <label class="form-item">Mã danh mục <span>*</span></label>
+            <input type="text" placeholder="DM001" />
+            <p class="input-error">Mã danh mục không được để trống</p>
+          </div>
+          <div class="form-container form-error">
+            <label class="form-item" for="">Tên danh mục <span>*</span></label>
+            <input type="text" placeholder="Quần áo" />
+            <p class="input-error">Tên danh mục không được để trống</p>
+          </div>
+
+          <div class="checkbox-container">
+            <label class="form-item" for="">Trạng thái</label>
+            <div class="checkbox-group">
+              <div class="checkbox">
+                <input type="radio" value="" />
+                <label> Đang hoạt động </label>
+              </div>
+              <div class="checkbox">
+                <input type="radio" value="" />
+                <label> Ngừng hoạt động </label>
+              </div>
+            </div>
+          </div>
+          <div class="button-group">
+            <button class="btn-overlay">Hủy</button>
+            <button class="btn-overlay">Thêm</button>
+          </div>
+        </form>
       </div>
-      <!-- Form  -->
     </div>
   </body>
 </html>

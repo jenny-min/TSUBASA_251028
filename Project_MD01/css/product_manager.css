@@ -307,6 +307,10 @@
     font-weight: 600;
 }
 
+.form-item span {
+    color: #ff0000;
+}
+
 .checkbox-container {
     display: flex;
     justify-content: left;
@@ -353,9 +357,9 @@
     background-color: #007AFF;
 }
 
-.hidden {
+/* .hidden {
     display: none;
-}
+} */
 
 /* .input-error {
     color: #ff0000;
