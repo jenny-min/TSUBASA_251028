@@ -286,7 +286,7 @@
         </main>
       </section>
       <!-- Form thêm mới danh mục -->
-      <div class="overlay hidden">
+      <!-- <div class="overlay hidden">
         <form class="form">
           <div class="form-title-group">
             <h4 class="form-title">Thêm mới sản phẩm</h4>
@@ -296,19 +296,22 @@
             <div class="form-container form-error">
               <label class="form-item">Mã sản phẩm <span>*</span></label>
               <input class="form-input form-410" type="text" />
-              <p class="input-error">Mã danh mục không được để trống</p>
+              <p class="input-error">Mã sản phẩm không được để trống</p>
             </div>
             <div class="form-container form-error">
               <label class="form-item">Tên sản phẩm <span>*</span></label>
               <input class="form-input form-410" type="text" />
-              <p class="input-error">Mã danh mục không được để trống</p>
+              <p class="input-error">Tên sản phẩm không được để trống</p>
             </div>
           </div>
           <div class="form-group">
-            <div class="form-container form-error">
+            <div class="form-container">
               <label class="form-item" for="">Danh mục <span>*</span></label>
-              <input class="form-input form-410" type="text" />
-              <!-- <p class="input-error">Số điện thoại không được để trống</p> -->
+              <select class="form-input form-410" name="" id="">
+                <option value="">Điện thoại</option>
+                <option value="">Thời trang nam</option>
+                <option value="">Thời trang nữ</option>
+              </select>
             </div>
 
             <div class="checkbox-container">
@@ -327,23 +330,22 @@
           </div>
 
           <div class="form-group">
-            <div class="form-container form-error">
+            <div class="form-container">
               <label class="form-item">Số lượng</label>
-              <input class="form-input" type="number" />
+              <input class="form-input width-266" type="number" />
             </div>
-            <div class="form-container form-error">
+            <div class="form-container">
               <label class="form-item">Giá</label>
-              <input class="form-input" type="number" />
+              <input class="form-input width-266" type="number" />
             </div>
-            <div class="form-container form-error">
+            <div class="form-container">
               <label class="form-item">Giảm giá</label>
-              <input class="form-input" type="number" />
+              <input class="form-input width-275" type="number" />
             </div>
           </div>
           <div class="form-container mb-24">
             <label class="form-item" for="">Hình ảnh</label>
             <input class="form-input" type="url" name="" id="" />
-            <!-- <input class="form-input" type="url" /> -->
           </div>
           <div class="form-container mb-24">
             <label class="form-item" for="">Chi tiết sản phẩm</label>
@@ -361,38 +363,80 @@
             <button class="btn-overlay">Thêm</button>
           </div>
         </form>
-      </div>
+      </div> -->
       <!-- Form cập nhật danh mục -->
       <!-- <div class="overlay hidden">
         <form class="form">
           <div class="form-title-group">
-            <h4 class="form-title">Cập nhật danh mục</h4>
+            <h4 class="form-title">Cập nhật sản phẩm</h4>
             <i class="fa-solid fa-x"></i>
           </div>
-          <div class="form-container form-error">
-            <label class="form-item">Mã danh mục <span>*</span></label>
-            <input type="text" placeholder="DM001" />
-            <p class="input-error">Mã danh mục không được để trống</p>
+          <div class="form-group">
+            <div class="form-container form-error">
+              <label class="form-item">Mã sản phẩm <span>*</span></label>
+              <input class="form-input form-410" type="text" />
+              <p class="input-error">Mã sản phẩm không được để trống</p>
+            </div>
+            <div class="form-container form-error">
+              <label class="form-item">Tên sản phẩm <span>*</span></label>
+              <input class="form-input form-410" type="text" />
+              <p class="input-error">Tên sản phẩm không được để trống</p>
+            </div>
           </div>
-          <div class="form-container form-error">
-            <label class="form-item" for="">Tên danh mục <span>*</span></label>
-            <input type="text" placeholder="Quần áo" />
-            <p class="input-error">Tên danh mục không được để trống</p>
-          </div>
+          <div class="form-group">
+            <div class="form-container">
+              <label class="form-item" for="">Danh mục <span>*</span></label>
+              <select class="form-input form-410" name="" id="">
+                <option value="">Điện thoại</option>
+                <option value="">Thời trang nam</option>
+                <option value="">Thời trang nữ</option>
+              </select>
+            </div>
 
-          <div class="checkbox-container">
-            <label class="form-item" for="">Trạng thái</label>
-            <div class="checkbox-group">
-              <div class="checkbox">
-                <input type="radio" value="" />
-                <label> Đang hoạt động </label>
-              </div>
-              <div class="checkbox">
-                <input type="radio" value="" />
-                <label> Ngừng hoạt động </label>
+            <div class="checkbox-container">
+              <label class="form-item" for="">Trạng thái</label>
+              <div class="checkbox-group">
+                <div class="checkbox">
+                  <input type="radio" value="" />
+                  <label> Đang hoạt động </label>
+                </div>
+                <div class="checkbox">
+                  <input type="radio" value="" />
+                  <label> Ngừng hoạt động </label>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="form-group">
+            <div class="form-container">
+              <label class="form-item">Số lượng</label>
+              <input class="form-input width-266" type="number" />
+            </div>
+            <div class="form-container">
+              <label class="form-item">Giá</label>
+              <input class="form-input width-266" type="number" />
+            </div>
+            <div class="form-container">
+              <label class="form-item">Giảm giá</label>
+              <input class="form-input width-275" type="number" />
+            </div>
+          </div>
+          <div class="form-container mb-24">
+            <label class="form-item" for="">Hình ảnh</label>
+            <input class="form-input" type="url" name="" id="" />
+          </div>
+          <div class="form-container mb-24">
+            <label class="form-item" for="">Chi tiết sản phẩm</label>
+            <textarea
+              class="form-input"
+              name=""
+              id=""
+              cols="30"
+              rows="3"
+            ></textarea>
+          </div>
+
           <div class="button-group">
             <button class="btn-overlay">Hủy</button>
             <button class="btn-overlay">Thêm</button>
