@@ -8,8 +8,6 @@
     background-color: #F6F8F9;
     padding: 16px 14px 0 14px;
 }
-.sidebar-container {
-}
 .sidebar-title {
     margin-bottom: 16px;
 }
@@ -17,8 +15,6 @@
 .sidebar i {
     width: 24px;
     color: #3F3F46;
-}
-.sidebar-body {
 }
 .sidebar-list {
     display: flex;
