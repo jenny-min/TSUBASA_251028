@@ -4,8 +4,401 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/manager_category.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <h1>Trang quản lý danh mục</h1>
+    <div class="category-container">
+      <!-- Phần sidebar -->
+      <sidebar class="sidebar">
+        <div class="sidebar-header">
+          <img src="../utils/images/icons/ecommerce.png" alt="" />
+        </div>
+        <div class="sidebar-body">
+          <div class="sidebar-list">
+            <i class="fa-solid fa-house"></i>
+            <p class="list-item">Thống kê</p>
+          </div>
+          <div class="sidebar-list">
+            <i class="fa-solid fa-money-bills"></i>
+            <p class="list-item">Danh mục</p>
+          </div>
+          <div class="sidebar-list">
+            <i class="fa-solid fa-folder"></i>
+            <p class="list-item">Sản phẩm</p>
+          </div>
+        </div>
+      </sidebar>
+      <!-- Phần section product -->
+      <section class="-section-category">
+        <!-- Section header -->
+        <header class="section-header">
+          <div class="header-nav">
+            <i class="fa-solid fa-bell"></i>
+            <img
+              class="user-img"
+              src="../utils/images/product_manager_images/user_img.png"
+              alt=""
+            />
+          </div>
+          <div class="section-container">
+            <div class="header-title">
+              <h1 class="title">Sản phẩm</h1>
+              <button class="add-btn">Thêm mới sản phẩm</button>
+            </div>
+            <div class="header-interaction">
+              <div class="status-bar">
+                <select class="status-select" name="" id="">
+                  <option value="" selected>Lọc theo danh mục</option>
+                  <option value="">Quần áo</option>
+                  <option value="">Kính mắt</option>
+                  <option value="">Thời trang nam</option>
+                  <option value="">Thời trang nữ</option>
+                  <option value="">Hoa quả</option>
+                  <option value="">Rau</option>
+                  <option value="">Điện thoại</option>
+                </select>
+              </div>
+              <div class="status-bar">
+                <select class="status-select" name="" id="">
+                  <option value="" selected>Lọc theo trạng thái</option>
+                  <option value="">Tất cả</option>
+                  <option value="">Ngừng hoạt động</option>
+                  <option value="">Đang hoạt động</option>
+                </select>
+              </div>
+              <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm sản phẩm theo tên" />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- Phần danh sách sản phẩm -->
+        <main class="section-main section-container">
+          <div class="table-list">
+            <table class="table">
+              <thead class="thead">
+                <tr>
+                  <th>
+                    Mã sản phẩm
+                    <span><i class="fa-solid fa-arrow-down"></i></span>
+                  </th>
+                  <th>
+                    Tên sản phẩm<span
+                      ><i class="fa-solid fa-arrow-down"></i
+                    ></span>
+                  </th>
+                  <th>
+                    Giá<span><i class="fa-solid fa-arrow-down"></i></span>
+                  </th>
+                  <th>Số lượng</th>
+                  <th>Giảm giá</th>
+                  <th>Trạng thái</th>
+                  <th>Chức năng</th>
+                </tr>
+              </thead>
+              <tbody class="tbody">
+                <tr>
+                  <td>SP001</td>
+                  <td>Iphone 12 Pro</td>
+                  <td>12.000.000 đ</td>
+                  <td>10</td>
+                  <td>0%</td>
+
+                  <td>
+                    <div class="box-status bg-active">
+                      <div class="dot dot-active"></div>
+                      <span class="status-text text-active"
+                        >Đang hoạt động</span
+                      >
+                    </div>
+                  </td>
+                  <td>
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SP002</td>
+                  <td>Samsung Galaxy X20</td>
+                  <td>21.000.000 đ</td>
+                  <td>100</td>
+                  <td>5%</td>
+
+                  <td>
+                    <div class="box-status bg-inactive">
+                      <div class="dot dot-inactive"></div>
+                      <span class="status-text text-inactive"
+                        >Ngừng hoạt động</span
+                      >
+                    </div>
+                  </td>
+                  <td>
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SP003</td>
+                  <td>Phone 8 Plus</td>
+                  <td>5.000.000 đ</td>
+                  <td>10</td>
+                  <td>0%</td>
+
+                  <td>
+                    <div class="box-status bg-active">
+                      <div class="dot dot-active"></div>
+                      <span class="status-text text-active"
+                        >Đang hoạt động</span
+                      >
+                    </div>
+                  </td>
+                  <td>
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SP004</td>
+                  <td>Iphone 14 Pro max</td>
+                  <td>25.000.000 đ</td>
+                  <td>20</td>
+                  <td>2%</td>
+
+                  <td>
+                    <div class="box-status bg-inactive">
+                      <div class="dot dot-inactive"></div>
+                      <span class="status-text text-inactive"
+                        >Ngừng hoạt động</span
+                      >
+                    </div>
+                  </td>
+                  <td>
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SP005</td>
+                  <td>Oppo X3</td>
+                  <td>2.000.000 đ</td>
+                  <td>10</td>
+                  <td>5%</td>
+
+                  <td>
+                    <div class="box-status bg-inactive">
+                      <div class="dot dot-inactive"></div>
+                      <span class="status-text text-inactive"
+                        >Ngừng hoạt động</span
+                      >
+                    </div>
+                  </td>
+                  <td>
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SP006</td>
+                  <td>Iphone 16</td>
+                  <td>20.000.000 đ</td>
+                  <td>20</td>
+                  <td>3%</td>
+
+                  <td>
+                    <div class="box-status bg-inactive">
+                      <div class="dot dot-inactive"></div>
+                      <span class="status-text text-inactive"
+                        >Ngừng hoạt động</span
+                      >
+                    </div>
+                  </td>
+                  <td>
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SP007</td>
+                  <td>Iphone 7 Plus</td>
+                  <td>4.000.000 đ</td>
+                  <td>10</td>
+                  <td>4%</td>
+
+                  <td>
+                    <div class="box-status bg-active">
+                      <div class="dot dot-active"></div>
+                      <span class="status-text text-active"
+                        >Đang hoạt động</span
+                      >
+                    </div>
+                  </td>
+                  <td>
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SP008</td>
+                  <td>Samsung S20 Ultra</td>
+                  <td>30.000.000 đ</td>
+                  <td>15</td>
+                  <td>2%</td>
+
+                  <td>
+                    <div class="box-status bg-inactive">
+                      <div class="dot dot-inactive"></div>
+                      <span class="status-text text-inactive"
+                        >Ngừng hoạt động</span
+                      >
+                    </div>
+                  </td>
+                  <td>
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination -->
+          <div class="pagination">
+            <button><i class="fa-solid fa-arrow-left"></i></button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>...</button>
+            <button>20</button>
+            <button><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </main>
+      </section>
+      <!-- Form thêm mới danh mục -->
+      <div class="overlay hidden">
+        <form class="form">
+          <div class="form-title-group">
+            <h4 class="form-title">Thêm mới sản phẩm</h4>
+            <i class="fa-solid fa-x"></i>
+          </div>
+          <div class="form-group">
+            <div class="form-container form-error">
+              <label class="form-item">Mã sản phẩm <span>*</span></label>
+              <input class="form-input form-410" type="text" />
+              <p class="input-error">Mã danh mục không được để trống</p>
+            </div>
+            <div class="form-container form-error">
+              <label class="form-item">Tên sản phẩm <span>*</span></label>
+              <input class="form-input form-410" type="text" />
+              <p class="input-error">Mã danh mục không được để trống</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-container form-error">
+              <label class="form-item" for="">Danh mục <span>*</span></label>
+              <input class="form-input form-410" type="text" />
+              <!-- <p class="input-error">Số điện thoại không được để trống</p> -->
+            </div>
+
+            <div class="checkbox-container">
+              <label class="form-item" for="">Trạng thái</label>
+              <div class="checkbox-group">
+                <div class="checkbox">
+                  <input type="radio" value="" />
+                  <label> Đang hoạt động </label>
+                </div>
+                <div class="checkbox">
+                  <input type="radio" value="" />
+                  <label> Ngừng hoạt động </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-container form-error">
+              <label class="form-item">Số lượng</label>
+              <input class="form-input" type="number" />
+            </div>
+            <div class="form-container form-error">
+              <label class="form-item">Giá</label>
+              <input class="form-input" type="number" />
+            </div>
+            <div class="form-container form-error">
+              <label class="form-item">Giảm giá</label>
+              <input class="form-input" type="number" />
+            </div>
+          </div>
+          <div class="form-container mb-24">
+            <label class="form-item" for="">Hình ảnh</label>
+            <input class="form-input" type="url" name="" id="" />
+            <!-- <input class="form-input" type="url" /> -->
+          </div>
+          <div class="form-container mb-24">
+            <label class="form-item" for="">Chi tiết sản phẩm</label>
+            <textarea
+              class="form-input"
+              name=""
+              id=""
+              cols="30"
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div class="button-group">
+            <button class="btn-overlay">Hủy</button>
+            <button class="btn-overlay">Thêm</button>
+          </div>
+        </form>
+      </div>
+      <!-- Form cập nhật danh mục -->
+      <!-- <div class="overlay hidden">
+        <form class="form">
+          <div class="form-title-group">
+            <h4 class="form-title">Cập nhật danh mục</h4>
+            <i class="fa-solid fa-x"></i>
+          </div>
+          <div class="form-container form-error">
+            <label class="form-item">Mã danh mục <span>*</span></label>
+            <input type="text" placeholder="DM001" />
+            <p class="input-error">Mã danh mục không được để trống</p>
+          </div>
+          <div class="form-container form-error">
+            <label class="form-item" for="">Tên danh mục <span>*</span></label>
+            <input type="text" placeholder="Quần áo" />
+            <p class="input-error">Tên danh mục không được để trống</p>
+          </div>
+
+          <div class="checkbox-container">
+            <label class="form-item" for="">Trạng thái</label>
+            <div class="checkbox-group">
+              <div class="checkbox">
+                <input type="radio" value="" />
+                <label> Đang hoạt động </label>
+              </div>
+              <div class="checkbox">
+                <input type="radio" value="" />
+                <label> Ngừng hoạt động </label>
+              </div>
+            </div>
+          </div>
+          <div class="button-group">
+            <button class="btn-overlay">Hủy</button>
+            <button class="btn-overlay">Thêm</button>
+          </div>
+        </form>
+      </div> -->
+    </div>
   </body>
 </html>
