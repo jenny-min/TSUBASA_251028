@@ -3,9 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Trang thống kê</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <h1>Trang thống kê</h1>
+    <div class="dashboard-container">
+      <!-- Phần sidebar -->
+      <sidebar class="sidebar">
+        <div class="sidebar-header">
+          <img src="../utils/images/icons/ecommerce.png" alt="" />
+        </div>
+        <div class="sidebar-body">
+          <div class="sidebar-list">
+            <i class="fa-solid fa-house"></i>
+            <p class="list-item">Thống kê</p>
+          </div>
+          <div class="sidebar-list">
+            <i class="fa-solid fa-money-bills"></i>
+            <p class="list-item">Danh mục</p>
+          </div>
+          <div class="sidebar-list">
+            <i class="fa-solid fa-folder"></i>
+            <p class="list-item">Sản phẩm</p>
+          </div>
+        </div>
+      </sidebar>
+      <!-- Phần section product -->
+      <section class="-section-category">
+        <!-- Section header -->
+        <header class="section-header">
+          <div class="header-nav">
+            <i class="fa-solid fa-bell"></i>
+            <img
+              class="user-img"
+              src="../utils/images/product_manager_images/user_img.png"
+              alt=""
+            />
+          </div>
+          <div class="section-container">
+            <div class="header-title">
+              <h1 class="title">Thống kê</h1>
+            </div>
+          </div>
+        </header>
+      </section>
+    </div>
   </body>
 </html>
