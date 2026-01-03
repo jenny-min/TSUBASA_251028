@@ -36,6 +36,11 @@ formLogin.addEventListener("submit", function (e) {
     // Ngăn chặn sự kiện default
     e.preventDefault();
 
+    // Reset lỗi
+    emailError.style.display = "none";
+    passwordError.style.display = "none";
+    loginError.style.display = "none";
+
     // Validate dữ liệu đầu vào
     // Email 
     if (!emailElement.value) {
@@ -82,6 +87,9 @@ formLogin.addEventListener("submit", function (e) {
         // Nếu không thì thông báo cho người dùng nhập lại dữ liệu
         loginError.style.display = "block";
     } else {
+        // Lưu user đăng nhập
+        localStorage.setItem("currentUser", JSON.stringify(userFind));
+
         // Nếu có thì đăng nhập thành công và chuyển hướng về trang chủ
         window.location.href = "../pages/dashboard.html";
     }
