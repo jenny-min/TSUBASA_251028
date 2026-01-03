@@ -38,10 +38,10 @@
     color: #989898;
 }
 .header-link a:hover {
-    color: #000000;
+    color: #000000!important;
 }
 .header-link a:active {
-    color: #000000;
+    color: #000000!important;
 }
 .header-icon-list i {
     color: #000000;
@@ -61,6 +61,9 @@
 }
 .nav a {
     color: #ffffff;
+}
+.nav a:hover {
+    color: #ebe5e5e5;
 }
 .nav-list {
     display: flex;

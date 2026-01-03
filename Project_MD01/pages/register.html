@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="register-container">
-      <form class="form" action="">
+      <form id="formRegister" class="form" action="">
         <header class="form-header">
           <h3 class="title">Đăng ký tài khoản</h3>
           <p class="description">Đăng ký tài khoản để sử dụng dịch vụ</p>
@@ -17,41 +17,60 @@
         <main class="form-body">
           <div class="form-group-name">
             <div class="form-group">
-              <label class="form-label" for="">Họ và tên đệm</label>
-              <input class="form-input" type="text" />
+              <label class="form-label" for="userFamilyName"
+                >Họ và tên đệm</label
+              >
+              <input id="userFamilyName" class="form-input" type="text" />
+              <p class="hidden text-error" id="userFamilyNameError">
+                Họ không được để trống
+              </p>
             </div>
             <div class="form-group">
-              <label class="form-label" for="">Tên</label>
-              <input class="form-input" type="text" />
+              <label class="form-label" for="userName">Tên</label>
+              <input id="userName" class="form-input" type="text" />
+              <p class="hidden text-error" id="userNameError">
+                Tên không được để trống
+              </p>
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label" for="">Email</label>
+            <label class="form-label" for="email">Email</label>
             <input
+              id="email"
               class="form-input"
               type="text"
               placeholder="you@company.com"
             />
+            <p class="hidden text-error" id="emailError">
+              Email không được để trống
+            </p>
           </div>
           <div class="form-group">
-            <label class="form-label" for="">Mật khẩu</label>
-            <input class="form-input" type="text" />
+            <label class="form-label" for="password">Mật khẩu</label>
+            <input id="password" class="form-input" type="password" />
+            <p class="hidden text-error" id="passwordError">
+              Mật khẩu không được để trống
+            </p>
           </div>
           <div class="form-group">
-            <label class="form-label" for="">Xác nhận mật khẩu</label>
-            <input class="form-input" type="text" />
+            <label class="form-label" for="rePassword">Xác nhận mật khẩu</label>
+            <input id="rePassword" class="form-input" type="password" />
+            <p class="hidden text-error" id="rePasswordError">
+              Mật khẩu không được để trống
+            </p>
           </div>
           <div class="form-function">
             <div class="agree">
-              <input class="input-checkbox" type="checkbox" />
+              <input id="agree" class="input-checkbox" type="checkbox" />
               <span
                 >Bạn đồng ý với <a href="">chính sách và điều khoản</a></span
               >
             </div>
+            <p id="message"></p>
           </div>
         </main>
         <footer class="form-footer">
-          <button class="form-button">Đăng ký</button>
+          <button type="submit" class="form-button">Đăng ký</button>
           <p class="form-redirect">
             <span
               >Bạn đã có tài khoản? <a href="./login.html">Đăng nhập</a></span
@@ -60,5 +79,7 @@
         </footer>
       </form>
     </div>
+    <!-- Script -->
+    <script src="../js/register.js"></script>
   </body>
 </html>

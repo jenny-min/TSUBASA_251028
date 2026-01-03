@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="login-container">
-      <form class="form" action="">
+      <form id="formLogin" class="form" action="">
         <header class="form-header">
           <h3 class="title">Đăng nhập</h3>
           <p class="description hidden-mobile">
@@ -21,12 +21,18 @@
         </header>
         <main class="form-body">
           <div class="form-group">
-            <label class="form-label" for="">Email:</label>
-            <input class="form-input" type="text" />
+            <label class="form-label" for="email">Email:</label>
+            <input id="email" class="form-input" type="text" />
+            <p class="hidden text-error" id="emailError">
+              Email không được để trống
+            </p>
           </div>
           <div class="form-group">
-            <label class="form-label" for="">Mật khẩu:</label>
-            <input class="form-input" type="text" />
+            <label class="form-label" for="password">Mật khẩu:</label>
+            <input id="password" class="form-input" type="password" />
+            <p class="hidden text-error" id="passwordError">
+              Mật khẩu không được để trống
+            </p>
           </div>
           <div class="form-function hidden-mobile">
             <div class="remember-account">
@@ -46,8 +52,11 @@
             </div>
           </div>
         </main>
+        <div class="hidden text-error" id="loginError">
+          Email và mật khẩu không đúng
+        </div>
         <footer class="form-footer forgot-account">
-          <button class="form-button">Đăng nhập</button>
+          <button type="submit" class="form-button">Đăng nhập</button>
           <p class="form-redirect hidden-mobile">
             <span
               >Bạn chưa có tài khoản?
