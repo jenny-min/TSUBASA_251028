@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang danh mục</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/product_manager.css" />
+    <link rel="stylesheet" href="../css/manager_category.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -15,7 +15,7 @@
     />
   </head>
   <body>
-    <div class="product-container">
+    <div class="main-container">
       <!-- Phần sidebar -->
       <aside class="aside">
         <div class="aside-header">
@@ -26,18 +26,18 @@
             <i class="fa-solid fa-house"></i>
             <p class="list-item">Thống kê</p>
           </a>
-          <a class="aside-list" href="../pages/product_manager.html">
+          <a class="aside-list" href="../pages/manager_category.html">
             <i class="fa-solid fa-money-bills"></i>
             <p class="list-item">Danh mục</p>
           </a>
-          <a class="aside-list" href="../pages/category_manager.html">
+          <a class="aside-list" href="../pages/manager_product.html">
             <i class="fa-solid fa-folder"></i>
             <p class="list-item">Sản phẩm</p>
           </a>
         </div>
       </aside>
       <!-- Phần section product -->
-      <section class="-section-product">
+      <section class="section-container">
         <!-- Section header -->
         <header class="section-header">
           <div class="header-nav">
@@ -48,7 +48,7 @@
               alt=""
             />
           </div>
-          <div class="section-container">
+          <div class="header-toolbar">
             <div class="header-title">
               <h1 class="title">Danh mục</h1>
               <button class="add-btn">Thêm mới danh mục</button>
@@ -69,7 +69,7 @@
           </div>
         </header>
         <!-- Phần danh sách sản phẩm -->
-        <main class="section-main section-container">
+        <main class="section-main">
           <div class="table-list">
             <table class="table">
               <thead class="thead">
@@ -318,5 +318,6 @@
         </form>
       </div> -->
     </div>
+    <script src="../js/manager_category.js"></script>
   </body>
 </html>

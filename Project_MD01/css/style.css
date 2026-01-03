@@ -18,6 +18,13 @@ body {
     margin-right: 160px;
 }
 
+.section-container {
+    font-size: 14px;
+    font-weight: 500;
+    color: #101828;
+    width: 100%;
+}
+
 
 a {
     text-decoration: none;
@@ -46,8 +53,13 @@ ul li {
 }
 
 /* Sidebar */
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
 .aside {
-    width: 240;
+    width: 240px;
     background-color: #F6F8F9;
     padding: 16px 14px 0 14px;
     font-size: 14px;
@@ -83,7 +95,7 @@ ul li {
 .list-item {
     margin: 0;
 }
-/* header-nav */
+/* Section header */
 .header-nav {
     display: flex;
     justify-content: right;
@@ -107,6 +119,9 @@ ul li {
 .user-img {
     width: 36px;
     height: 36px;
+}
+.header-toolbar{
+    padding: 0 24px;
 }
 .header-title {
     display: flex;

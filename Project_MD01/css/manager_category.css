@@ -1,20 +1,4 @@
-.category-container {
-    display: flex;
-    height: 100vh;
-}
-
 /* Section category */
-.-section-category {
-    font-size: 14px;
-    font-weight: 500;
-    color: #101828;
-    width: 100%;
-}
-.section-container {
-    padding: 0 24px;
-}
-
-/* Section main */
 .section-main {
     text-align: left;
     padding-left: 24px;
