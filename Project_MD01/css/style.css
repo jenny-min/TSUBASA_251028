@@ -196,10 +196,7 @@ ul li {
     border: none;
 }
 
-/* Section category */
-.section-main {
-    text-align: left;
-}
+/* Section*/
 .table-list {
     margin-bottom: 24px;
 }
@@ -226,14 +223,19 @@ ul li {
 }
 
 .tbody tr td {
-    padding: 26px 24px;
+    padding: 26px 0 26px 24px;
     color: #101828;
     font-weight: 500;
 }
 
+.tbody button {
+    border: none;
+    background-color: transparent;
+}
 
 .tbody tr td i {
     font-size: 20px;
+    width: 40px;
 }
 
 .fa-trash {
@@ -255,42 +257,28 @@ ul li {
     width: fit-content;
 }
 
-.bg-active {
-    background-color: #ecfdf3;
-}
-
-.bg-inactive {
-    background-color: #fef2f2;
-}
-
 .dot {
     height: 8px;
     width: 8px;
     border-radius: 50%;
 }
 
-.dot-active {    
-    background-color: #12b76a;
+.active {    
+    background-color: #ecfdf3;
+    color: #12b76a;
 }
 
-.dot-inactive {
-    background-color: #b91c1c;
+.inactive {
+    background-color: #fef2f2;
+    color: #b91c1c;
 }
 
 .status-text {
     font-size: 12px;
     font-weight: 500;
     color: #12b76a;
+    position: relative;
 }
-
-.text-active {
-    color: #12b76a;
-}
-
-.text-inactive {
-    color: #b91c1c;
-}
-
 /* Pagination */
 
 .pagination {
@@ -323,12 +311,13 @@ ul li {
 
 /* Overlay */
 .overlay {
-    position: fixed;
-    inset:0;
-    background-color: #00000080;
+    height: 100vh;
     display: none;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    inset: 0;
+    background-color: #00000080;
     color: #344054;
 }
 
@@ -430,7 +419,7 @@ ul li {
     color: #000000;
 }
 
-.button-group {
+.form-footer {
     border-top: 1px solid #A1A1AA;
     padding-top: 24px;
     display: flex;

@@ -27,7 +27,9 @@
             <div class="header-toolbar">
               <div class="header-title">
                 <h1 class="title">Danh mục</h1>
-                <button id="btnOpen" class="btn-add">Thêm mới danh mục</button>
+                <button onclick="handleShowModal()" class="btn-add">
+                  Thêm mới danh mục
+                </button>
               </div>
               <div class="header-interaction">
                 <div class="status-bar">
@@ -66,144 +68,7 @@
                       <th>Chức năng</th>
                     </tr>
                   </thead>
-                  <tbody class="tbody">
-                    
-                  <td>DM001</td>
-                  <td>Quần áo</td>
-
-                  <td>
-                    <div class="box-status bg-active">
-                      <div class="dot dot-active"></div>
-                      <span class="status-text text-active"
-                        >Đang hoạt động</span
-                      >
-                    </div>
-                  </td>
-                  <td style="width: 146px">
-                    <i class="fa-solid fa-trash"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>DM002</td>
-                  <td>Kính mắt</td>
-
-                  <td>
-                    <div class="box-status bg-inactive">
-                      <div class="dot dot-inactive"></div>
-                      <span class="status-text text-inactive"
-                        >Ngừng hoạt động</span
-                      >
-                    </div>
-                  </td>
-                  <td style="width: 146px">
-                    <i class="fa-solid fa-trash"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>DM003</td>
-                  <td>Giày dép</td>
-
-                  <td>
-                    <div class="box-status bg-active">
-                      <div class="dot dot-active"></div>
-                      <span class="status-text text-active"
-                        >Đang hoạt động</span
-                      >
-                    </div>
-                  </td>
-                  <td style="width: 146px">
-                    <i class="fa-solid fa-trash"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>DM004</td>
-                  <td>Thời trang nam</td>
-
-                  <td>
-                    <div class="box-status bg-inactive">
-                      <div class="dot dot-inactive"></div>
-                      <span class="status-text text-inactive"
-                        >Ngừng hoạt động</span
-                      >
-                    </div>
-                  </td>
-                  <td style="width: 146px">
-                    <i class="fa-solid fa-trash"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>DM005</td>
-                  <td>Thời trang nữ</td>
-
-                  <td>
-                    <div class="box-status bg-inactive">
-                      <div class="dot dot-inactive"></div>
-                      <span class="status-text text-inactive"
-                        >Ngừng hoạt động</span
-                      >
-                    </div>
-                  </td>
-                  <td style="width: 146px">
-                    <i class="fa-solid fa-trash"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>DM006</td>
-                  <td>Hoa quả</td>
-
-                  <td>
-                    <div class="box-status bg-inactive">
-                      <div class="dot dot-inactive"></div>
-                      <span class="status-text text-inactive"
-                        >Ngừng hoạt động</span
-                      >
-                    </div>
-                  </td>
-                  <td style="width: 146px">
-                    <i class="fa-solid fa-trash"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>DM007</td>
-                  <td>Rau</td>
-
-                  <td>
-                    <div class="box-status bg-active">
-                      <div class="dot dot-active"></div>
-                      <span class="status-text text-active"
-                        >Đang hoạt động</span
-                      >
-                    </div>
-                  </td>
-                  <td style="width: 146px">
-                    <i class="fa-solid fa-trash"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>MD008</td>
-                  <td>Điện thoại</td>
-
-                  <td>
-                    <div class="box-status bg-inactive">
-                      <div class="dot dot-inactive"></div>
-                      <span class="status-text text-inactive"
-                        >Ngừng hoạt động</span
-                      >
-                    </div>
-                  </td>
-                  <td style="width: 146px">
-                    <i class="fa-solid fa-trash"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </td>
-                </tr>
-                  </tbody>
+                  <tbody id="tbody" class="tbody"></tbody>
                 </table>
               </div>
               <!-- Pagination -->
@@ -212,10 +77,9 @@
           </div>
         </header>
       </main>
-      <!-- Modal thêm mới, cập nhật sản phẩm -->
 
-      <!-- Form thêm mới danh mục -->
-      <div id="form-add-category" class="overlay hidden">
+      <!-- Modal thêm mới, cập nhật sản phẩm -->
+      <div id="form-add-category" class="overlay">
         <form onsubmit="handleSubmit(event)" class="form">
           <div class="form-title-group">
             <h3 class="form-title">Thêm mới danh mục</h3>
@@ -227,54 +91,53 @@
               <i class="fa-solid fa-x"></i>
             </button>
           </div>
+          <div class="form-body">
+            <div class="form-container form-error">
+              <label class="form-item">Mã danh mục <span>*</span></label>
+              <input id="category-code" class="form-input" type="text" />
+              <p id="categoryCodeError" class="text-error"></p>
+            </div>
+            <div class="form-container form-error">
+              <label class="form-item" for=""
+                >Tên danh mục <span>*</span></label
+              >
+              <input id="category-name" class="form-input" type="text" />
+              <p id="categoryNameError" class="text-error"></p>
+            </div>
 
-          <div class="form-container form-error">
-            <label class="form-item">Mã danh mục <span>*</span></label>
-            <input id="categoryId" class="form-input" type="text" />
-            <p id="categoryIdError" class="hidden text-error">
-              Mã danh mục không được để trống
-            </p>
-          </div>
-          <div class="form-container form-error">
-            <label class="form-item" for="">Tên danh mục <span>*</span></label>
-            <input id="categoryName" class="form-input" type="text" />
-            <p id="categoryNameError" class="hidden text-error">
-              Tên danh mục không được để trống
-            </p>
-          </div>
-
-          <div class="checkbox-container">
-            <label class="form-item" for="">Trạng thái</label>
-            <p id="message"></p>
-            <div id="checkboxGroup" class="checkbox-group">
-              <div class="checkbox">
-                <input
-                  name="status"
-                  id="active"
-                  type="radio"
-                  value=""
-                  checked
-                />
-                <label for="active"> Đang hoạt động </label>
-              </div>
-              <div class="checkbox">
-                <input name="status" id="inActive" type="radio" value="" />
-                <label for="inActive"> Ngừng hoạt động </label>
+            <div class="checkbox-container">
+              <label class="form-item" for="">Trạng thái</label>
+              <p id="message"></p>
+              <div class="checkbox-group">
+                <div class="checkbox">
+                  <input name="status" type="radio" value="active" checked />
+                  <label for="active"> Đang hoạt động </label>
+                </div>
+                <div class="checkbox">
+                  <input value="inactive" name="status" type="radio" />
+                  <label for="inActive"> Ngừng hoạt động </label>
+                </div>
               </div>
             </div>
+            <p id="message"></p>
           </div>
-          <p id="message"></p>
 
-          <div class="button-group">
-            <button id="btnCancel" class="btn-overlay">Hủy</button>
+          <div class="form-footer">
+            <button
+              type="button"
+              onclick="handleCloseModal()"
+              class="btn-overlay"
+            >
+              Hủy
+            </button>
             <button id="btnAddCategory" class="btn-overlay">Thêm</button>
           </div>
         </form>
       </div>
 
       <!-- Form cập nhật danh mục -->
-      <div id="overlayUpdate" class="overlay hidden">
-        <form class="form">
+      <div id="form-update-category" class="overlay">
+        <form onsubmit="handleSubmit(event)" class="form">
           <div class="form-title-group">
             <h4 class="form-title">Cập nhật danh mục</h4>
             <button id="btnClose" class="btn-close">
