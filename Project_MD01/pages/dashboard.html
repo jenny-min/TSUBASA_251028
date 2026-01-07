@@ -15,32 +15,14 @@
     />
   </head>
   <body>
-    <div class="dashboard-container">
+    <div class="main-container">
       <!-- Phần sidebar -->
-      <aside class="aside">
-        <div class="aside-header">
-          <img src="../utils/images/icons/ecommerce.png" alt="" />
-        </div>
-        <div class="aside-body">
-          <a class="aside-list" href="../pages/dashboard.html">
-            <i class="fa-solid fa-house"></i>
-            <p class="list-item">Thống kê</p>
-          </a>
-          <a class="aside-list" href="../pages/product_manager.html">
-            <i class="fa-solid fa-money-bills"></i>
-            <p class="list-item">Danh mục</p>
-          </a>
-          <a class="aside-list" href="../pages/category_manager.html">
-            <i class="fa-solid fa-folder"></i>
-            <p class="list-item">Sản phẩm</p>
-          </a>
-        </div>
-      </aside>
+      <aside id="menu-component" class="aside"></aside>
       <!-- Phần section product -->
       <section class="-section-category">
         <!-- Section header -->
         <header class="section-header">
-          <div class="header-nav">
+          <div id="renderHeader" class="header-nav">
             <i class="fa-solid fa-bell"></i>
             <img
               class="user-img"
@@ -51,7 +33,11 @@
           <div class="section-container">
             <div class="header-title">
               <h1 class="title">Thống kê</h1>
-              <button id="btnLogout" class="btn-log-out">
+              <button
+                onclick="handleLogout()"
+                id="btnLogout"
+                class="btn-log-out"
+              >
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 Log out
               </button>
@@ -60,6 +46,17 @@
         </header>
       </section>
     </div>
+    <!-- Script -->
+    <script src="../js/aside.js"></script>
+    <script src="../js/header.js"></script>
     <script src="../js/logout.js"></script>
+
+    <!-- Gán phần chuỗi HTML vào component -->
+    <script>
+      document.querySelector("#menu-component").innerHTML =
+        renderAside("dashboard");
+      document.querySelector("#header-component").innerHTML =
+        renderHeader("dashboard");
+    </script>
   </body>
 </html>

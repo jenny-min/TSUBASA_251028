@@ -8,7 +8,7 @@
     font-size: 14px;
     font-weight: 500;
     color: #101828;
-    width: 100%;
+    flex: 1;
 }
 .section-container {
     padding: 0 24px;

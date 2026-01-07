@@ -1,12 +1,12 @@
 // Lấy ra element của trang
-const formLogin = document.getElementById("formLogin");
-const emailElement = document.getElementById("email");
-const passwordElement = document.getElementById("password");
+const formLogin = document.querySelector("#formLogin");
+const emailElement = document.querySelector("#email");
+const passwordElement = document.querySelector("#password");
 
 // Elements liên quan đến lỗi
-const emailError = document.getElementById("emailError");
-const passwordError = document.getElementById("passwordError");
-const loginError = document.getElementById("loginError");
+const emailError = document.querySelector("#emailError");
+const passwordError = document.querySelector("#passwordError");
+const loginError = document.querySelector("#loginError");
 
 /**
  * Validate địa chỉ email (regex)
@@ -46,6 +46,7 @@ formLogin.addEventListener("submit", function (e) {
     if (!emailElement.value) {
         // Hiển thị lỗi
         emailError.style.display = "block";
+        emailError.innerHTML = "Email không được để trống";
     } else {
         // Ẩn thị lỗi
         emailError.style.display = "none";
@@ -55,6 +56,7 @@ formLogin.addEventListener("submit", function (e) {
             // Hiển thị lỗi
             emailError.style.display = "block";
             emailError.innerHTML = "Email không đúng định dạng";
+            return;
         }
     }
 
@@ -62,6 +64,7 @@ formLogin.addEventListener("submit", function (e) {
     if (!passwordElement.value) {
         // Hiển thị lỗi
         passwordError.style.display = "block";
+        passwordError.innerHTML = "Mật khẩu không được để trống";
     } else {
         // Ẩn thị lỗi
         passwordError.style.display = "none";
@@ -71,6 +74,7 @@ formLogin.addEventListener("submit", function (e) {
             // Hiển thị lỗi
             passwordError.style.display = "block";
             passwordError.innerHTML = "Mật khẩu phải có ít nhất 8 lý tự";
+            return;
         }
     }
 
@@ -86,6 +90,7 @@ formLogin.addEventListener("submit", function (e) {
     if (!userFind) {
         // Nếu không thì thông báo cho người dùng nhập lại dữ liệu
         loginError.style.display = "block";
+        loginError.innerHTML = "Tài khoản khồn tồn tại";
     } else {
         // Lưu user đăng nhập
         localStorage.setItem("currentUser", JSON.stringify(userFind));

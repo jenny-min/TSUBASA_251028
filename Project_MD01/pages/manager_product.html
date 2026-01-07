@@ -16,44 +16,20 @@
   </head>
   <body>
     <div class="main-container">
-      <!-- Phần aside -->
-      <aside class="aside">
-        <div class="aside-header">
-          <img src="../utils/images/icons/ecommerce.png" alt="" />
-        </div>
-        <div class="aside-body">
-          <a class="aside-list" href="../pages/dashboard.html">
-            <i class="fa-solid fa-house"></i>
-            <p class="list-item">Thống kê</p>
-          </a>
-          <a class="aside-list" href="../pages/manager_category.html">
-            <i class="fa-solid fa-money-bills"></i>
-            <p class="list-item">Danh mục</p>
-          </a>
-          <a class="aside-list" href="../pages/manager_product.html">
-            <i class="fa-solid fa-folder"></i>
-            <p class="list-item">Sản phẩm</p>
-          </a>
-        </div>
-      </aside>
+      <!-- Phần sidebar -->
+      <aside id="menu-component" class="aside"></aside>
       <!-- Phần section product -->
-      <section class="section-container">
+      <main class="section-container">
         <!-- Section header -->
-        <header class="section-header">
-          <div class="header-nav">
-            <i class="fa-solid fa-bell"></i>
-            <img
-              class="user-img"
-              src="../utils/images/product_manager_images/user_img.png"
-              alt=""
-            />
-          </div>
-          <div class="header-toolbar">
-            <div class="header-title">
-              <h1 class="title">Sản phẩm</h1>
-              <button class="add-btn">Thêm mới sản phẩm</button>
-            </div>
-            <div class="header-interaction">
+         <header class="section-header">
+          <div id="header-component" class="header-nav"></div>
+          <div class="main">
+            <div class="header-toolbar">
+              <div class="header-title">
+                <h1 class="title">Sản phẩm</h1>
+                <button id="btnOpen" class="btn-add">Thêm mới sản phẩm</button>
+              </div>
+              <div class="header-interaction">
               <div class="status-bar">
                 <select class="status-select" name="" id="">
                   <option value="" selected>Lọc theo danh mục</option>
@@ -79,12 +55,10 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
             </div>
-          </div>
-        </header>
-        <!-- Phần danh sách sản phẩm -->
-        <main class="section-main section-container">
-          <div class="table-list">
-            <table class="table">
+            </div>
+            <!-- Phần danh mục sản phẩm -->
+            <section class="section-main">
+              <table class="table">
               <thead class="thead">
                 <tr>
                   <th>
@@ -226,147 +200,17 @@
                     <i class="fa-solid fa-pen"></i>
                   </td>
                 </tr>
-                <tr>
-                  <td>SP007</td>
-                  <td>Iphone 7 Plus</td>
-                  <td>4.000.000 đ</td>
-                  <td>10</td>
-                  <td>4%</td>
-
-                  <td>
-                    <div class="box-status bg-active">
-                      <div class="dot dot-active"></div>
-                      <span class="status-text text-active"
-                        >Đang hoạt động</span
-                      >
-                    </div>
-                  </td>
-                  <td>
-                    <i class="fa-solid fa-trash"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>SP008</td>
-                  <td>Samsung S20 Ultra</td>
-                  <td>30.000.000 đ</td>
-                  <td>15</td>
-                  <td>2%</td>
-
-                  <td>
-                    <div class="box-status bg-inactive">
-                      <div class="dot dot-inactive"></div>
-                      <span class="status-text text-inactive"
-                        >Ngừng hoạt động</span
-                      >
-                    </div>
-                  </td>
-                  <td>
-                    <i class="fa-solid fa-trash"></i>
-                    <i class="fa-solid fa-pen"></i>
-                  </td>
-                </tr>
+              
               </tbody>
             </table>
+              <!-- Pagination -->
+              <div id="pagination-component" class="pagination"></div>
+            </section>
           </div>
-          <!-- Pagination -->
-          <div class="pagination">
-            <button><i class="fa-solid fa-arrow-left"></i></button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>7</button>
-            <button>...</button>
-            <button>20</button>
-            <button><i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-        </main>
+        </header>
+        
       </section>
-      <!-- Form thêm mới danh mục -->
-      <!-- <div class="overlay hidden">
-        <form class="form">
-          <div class="form-title-group">
-            <h4 class="form-title">Thêm mới sản phẩm</h4>
-            <i class="fa-solid fa-x"></i>
-          </div>
-          <div class="form-group">
-            <div class="form-container form-error">
-              <label class="form-item">Mã sản phẩm <span>*</span></label>
-              <input class="form-input form-410" type="text" />
-              <p class="input-error">Mã sản phẩm không được để trống</p>
-            </div>
-            <div class="form-container form-error">
-              <label class="form-item">Tên sản phẩm <span>*</span></label>
-              <input class="form-input form-410" type="text" />
-              <p class="input-error">Tên sản phẩm không được để trống</p>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-container">
-              <label class="form-item" for="">Danh mục <span>*</span></label>
-              <select class="form-input form-410" name="" id="">
-                <option value="">Điện thoại</option>
-                <option value="">Thời trang nam</option>
-                <option value="">Thời trang nữ</option>
-              </select>
-            </div>
-
-            <div class="checkbox-container">
-              <label class="form-item" for="">Trạng thái</label>
-              <div class="checkbox-group">
-                <div class="checkbox">
-                  <input type="radio" value="" />
-                  <label> Đang hoạt động </label>
-                </div>
-                <div class="checkbox">
-                  <input type="radio" value="" />
-                  <label> Ngừng hoạt động </label>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="form-container">
-              <label class="form-item">Số lượng</label>
-              <input class="form-input width-266" type="number" />
-            </div>
-            <div class="form-container">
-              <label class="form-item">Giá</label>
-              <input class="form-input width-266" type="number" />
-            </div>
-            <div class="form-container">
-              <label class="form-item">Giảm giá</label>
-              <input class="form-input width-275" type="number" />
-            </div>
-          </div>
-          <div class="form-container mb-24">
-            <label class="form-item" for="">Hình ảnh</label>
-            <input class="form-input" type="url" name="" id="" />
-          </div>
-          <div class="form-container mb-24">
-            <label class="form-item" for="">Chi tiết sản phẩm</label>
-            <textarea
-              class="form-input"
-              name=""
-              id=""
-              cols="30"
-              rows="3"
-            ></textarea>
-          </div>
-
-          <div class="button-group">
-            <button class="btn-overlay">Hủy</button>
-            <button class="btn-overlay">Thêm</button>
-          </div>
-        </form>
-      </div> -->
-      <!-- Form cập nhật danh mục -->
-      <!-- <div class="overlay hidden">
-        <form class="form">
+        <!-- <form class="form">
           <div class="form-title-group">
             <h4 class="form-title">Cập nhật sản phẩm</h4>
             <i class="fa-solid fa-x"></i>
@@ -441,8 +285,25 @@
             <button class="btn-overlay">Hủy</button>
             <button class="btn-overlay">Thêm</button>
           </div>
-        </form>
-      </div> -->
+        </form> -->
+      </div>
     </div>
+    <!-- Script -->
+    <script src="../js/aside.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/pagination.js"></script>
+
+
+    <!-- Gán phần chuỗi HTML vào component -->
+    <script>
+      document.querySelector("#menu-component").innerHTML =
+        renderAside("manager-category");
+
+      document.querySelector("#header-component").innerHTML =
+        renderHeader("manager-category");
+
+      document.querySelector("#pagination-component").innerHTML =
+        renderPagination("manager-category");
+    </script>
   </body>
 </html>

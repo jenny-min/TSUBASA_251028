@@ -1,19 +1,19 @@
 // Lấy ra elements của trang
-const formRegister = document.getElementById("formRegister");
-const userFamilyNameElement = document.getElementById("userFamilyName");
-const userNameElement = document.getElementById("userName");
-const emailElement = document.getElementById("email");
-const passwordElement = document.getElementById("password");
-const rePasswordElement = document.getElementById("rePassword");
-const agreeElement = document.getElementById("agree");
-const messageElement = document.getElementById("message");
+const formRegister = document.querySelector("#formRegister");
+const userFamilyNameElement = document.querySelector("#userFamilyName");
+const userNameElement = document.querySelector("#userName");
+const emailElement = document.querySelector("#email");
+const passwordElement = document.querySelector("#password");
+const rePasswordElement = document.querySelector("#rePassword");
+const agreeElement = document.querySelector("#agree");
+const messageElement = document.querySelector("#message");
 
 // Elements liên quan đến lỗi
-const userFamilyNameError = document.getElementById("userFamilyNameError");
-const userNameError = document.getElementById("userNameError");
-const emailError = document.getElementById("emailError");
-const passwordError = document.getElementById("passwordError");
-const rePasswordError = document.getElementById("rePasswordError");
+const userFamilyNameError = document.querySelector("#userFamilyNameError");
+const userNameError = document.querySelector("#userNameError");
+const emailError = document.querySelector("#emailError");
+const passwordError = document.querySelector("#passwordError");
+const rePasswordError = document.querySelector("#rePasswordError");
 
 // Lấy dữ liệu từ Localstorage (Cần chuyển dữ liệu thành mảng/chuỗi (object, array) trước khi lấy về thông qua phương thức JSON.parse, lưu ý khi lưu vào localstorage thường được lưu dưới dạng string thông qua phương thức stringtify)
 const userLocal = JSON.parse(localStorage.getItem("users")) || [];
@@ -52,6 +52,8 @@ formRegister.addEventListener("submit", function (e) {
     if (!userFamilyNameElement.value) {
         // Hiển thị lỗi
         userFamilyNameError.style.display = "block";
+        userFamilyNameError.innerHTML = "Họ không được để trống";
+
     } else {
         // Ẩn lỗi
         userFamilyNameError.style.display = "none";
@@ -61,6 +63,7 @@ formRegister.addEventListener("submit", function (e) {
     if (!userNameElement.value) {
         // Hiển thị lỗi
         userNameError.style.display = "block";
+        userNameError.innerHTML = "Tên không được để trống";
     } else {
         // Ẩn lỗi
         userNameError.style.display = "none";
@@ -70,6 +73,7 @@ formRegister.addEventListener("submit", function (e) {
     if (!emailElement.value) {
         // Hiển thị lỗi
         emailError.style.display = "block";
+        emailError.innerHTML = "Email không được để trống";
     } else {
         // Ẩn lỗi
         emailError.style.display = "none";
@@ -86,6 +90,7 @@ formRegister.addEventListener("submit", function (e) {
     if (!passwordElement.value) {
         // Hiển thị lỗi
         passwordError.style.display = "block";
+        passwordError.innerHTML = "Mật khẩu không được để trống";
     } else {
         // Ẩn lỗi
         passwordError.style.display = "none";
@@ -102,6 +107,7 @@ formRegister.addEventListener("submit", function (e) {
     if (!rePasswordElement.value) {
         // Hiển thị lỗi
         rePasswordError.style.display = "block";
+        rePasswordError.innerHTML = "Mật khẩu không được để trống";
     } else {
         // Ẩn lỗi
         rePasswordError.style.display = "none";

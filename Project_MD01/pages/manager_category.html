@@ -17,78 +17,57 @@
   <body>
     <div class="main-container">
       <!-- Phần sidebar -->
-      <aside class="aside">
-        <div class="aside-header">
-          <img src="../utils/images/icons/ecommerce.png" alt="" />
-        </div>
-        <div class="aside-body">
-          <a class="aside-list" href="../pages/dashboard.html">
-            <i class="fa-solid fa-house"></i>
-            <p class="list-item">Thống kê</p>
-          </a>
-          <a class="aside-list" href="../pages/manager_category.html">
-            <i class="fa-solid fa-money-bills"></i>
-            <p class="list-item">Danh mục</p>
-          </a>
-          <a class="aside-list" href="../pages/manager_product.html">
-            <i class="fa-solid fa-folder"></i>
-            <p class="list-item">Sản phẩm</p>
-          </a>
-        </div>
-      </aside>
-      <!-- Phần section product -->
-      <section class="section-container">
+      <aside id="menu-component" class="aside"></aside>
+      <!-- Phần section caegory -->
+      <main class="section-container">
         <!-- Section header -->
         <header class="section-header">
-          <div class="header-nav">
-            <i class="fa-solid fa-bell"></i>
-            <img
-              class="user-img"
-              src="../utils/images/product_manager_images/user_img.png"
-              alt=""
-            />
-          </div>
-          <div class="header-toolbar">
-            <div class="header-title">
-              <h1 class="title">Danh mục</h1>
-              <button class="add-btn">Thêm mới danh mục</button>
-            </div>
-            <div class="header-interaction">
-              <div class="status-bar">
-                <select class="status-select" name="" id="">
-                  <option value="">Tất cả</option>
-                  <option value="" selected>Đang hoạt động</option>
-                  <option value="">Ngừng hoạt động</option>
-                </select>
+          <div id="header-component" class="header-nav"></div>
+          <div class="main">
+            <div class="header-toolbar">
+              <div class="header-title">
+                <h1 class="title">Danh mục</h1>
+                <button id="btnOpen" class="btn-add">Thêm mới danh mục</button>
               </div>
-              <div class="search-bar">
-                <input type="text" placeholder="Tìm kiếm danh mục theo tên" />
-                <i class="fa-solid fa-magnifying-glass"></i>
+              <div class="header-interaction">
+                <div class="status-bar">
+                  <select class="status-select" name="" id="">
+                    <option value="">Tất cả</option>
+                    <option value="" selected>Đang hoạt động</option>
+                    <option value="">Ngừng hoạt động</option>
+                  </select>
+                </div>
+                <div class="search-bar">
+                  <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Tìm kiếm danh mục theo tên"
+                  />
+                  <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
               </div>
             </div>
-          </div>
-        </header>
-        <!-- Phần danh sách sản phẩm -->
-        <main class="section-main">
-          <div class="table-list">
-            <table class="table">
-              <thead class="thead">
-                <tr>
-                  <th>
-                    Mã danh mục
-                    <span><i class="fa-solid fa-arrow-down"></i></span>
-                  </th>
-                  <th>
-                    Tên danh mục<span
-                      ><i class="fa-solid fa-arrow-down"></i
-                    ></span>
-                  </th>
-                  <th>Trạng thái</th>
-                  <th>Chức năng</th>
-                </tr>
-              </thead>
-              <tbody class="tbody">
-                <tr>
+            <!-- Phần danh mục sản phẩm -->
+            <section class="section-main">
+              <div class="table-list">
+                <table class="table">
+                  <thead class="thead">
+                    <tr>
+                      <th>
+                        Mã danh mục
+                        <span><i class="fa-solid fa-arrow-down"></i></span>
+                      </th>
+                      <th>
+                        Tên danh mục<span
+                          ><i class="fa-solid fa-arrow-down"></i
+                        ></span>
+                      </th>
+                      <th>Trạng thái</th>
+                      <th>Chức năng</th>
+                    </tr>
+                  </thead>
+                  <tbody class="tbody">
+                    
                   <td>DM001</td>
                   <td>Quần áo</td>
 
@@ -224,100 +203,144 @@
                     <i class="fa-solid fa-pen"></i>
                   </td>
                 </tr>
-              </tbody>
-            </table>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Pagination -->
+              <div id="pagination-component" class="pagination"></div>
+            </section>
           </div>
-          <!-- Pagination -->
-          <div class="pagination">
-            <button><i class="fa-solid fa-arrow-left"></i></button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>7</button>
-            <button>...</button>
-            <button>20</button>
-            <button><i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-        </main>
-      </section>
+        </header>
+      </main>
+      <!-- Modal thêm mới, cập nhật sản phẩm -->
+
       <!-- Form thêm mới danh mục -->
-      <!-- <div class="overlay hidden">
-        <form class="form">
+      <div id="form-add-category" class="overlay hidden">
+        <form onsubmit="handleSubmit(event)" class="form">
           <div class="form-title-group">
-            <h4 class="form-title">Thêm mới danh mục</h4>
-            <i class="fa-solid fa-x"></i>
+            <h3 class="form-title">Thêm mới danh mục</h3>
+            <button
+              onclick="handleCloseModal()"
+              type="button"
+              class="btn-close"
+            >
+              <i class="fa-solid fa-x"></i>
+            </button>
           </div>
+
           <div class="form-container form-error">
             <label class="form-item">Mã danh mục <span>*</span></label>
-            <input type="text" />
-            <p class="input-error">Mã danh mục không được để trống</p>
+            <input id="categoryId" class="form-input" type="text" />
+            <p id="categoryIdError" class="hidden text-error">
+              Mã danh mục không được để trống
+            </p>
           </div>
           <div class="form-container form-error">
             <label class="form-item" for="">Tên danh mục <span>*</span></label>
-            <input type="text" />
-            <p class="input-error">Tên danh mục không được để trống</p>
+            <input id="categoryName" class="form-input" type="text" />
+            <p id="categoryNameError" class="hidden text-error">
+              Tên danh mục không được để trống
+            </p>
           </div>
 
           <div class="checkbox-container">
             <label class="form-item" for="">Trạng thái</label>
-            <div class="checkbox-group">
+            <p id="message"></p>
+            <div id="checkboxGroup" class="checkbox-group">
               <div class="checkbox">
-                <input type="radio" value="" />
-                <label> Đang hoạt động </label>
+                <input
+                  name="status"
+                  id="active"
+                  type="radio"
+                  value=""
+                  checked
+                />
+                <label for="active"> Đang hoạt động </label>
               </div>
               <div class="checkbox">
-                <input type="radio" value="" />
-                <label> Ngừng hoạt động </label>
+                <input name="status" id="inActive" type="radio" value="" />
+                <label for="inActive"> Ngừng hoạt động </label>
               </div>
             </div>
           </div>
+          <p id="message"></p>
+
           <div class="button-group">
-            <button class="btn-overlay">Hủy</button>
-            <button class="btn-overlay">Thêm</button>
+            <button id="btnCancel" class="btn-overlay">Hủy</button>
+            <button id="btnAddCategory" class="btn-overlay">Thêm</button>
           </div>
         </form>
-      </div> -->
+      </div>
+
       <!-- Form cập nhật danh mục -->
-      <!-- <div class="overlay hidden">
+      <div id="overlayUpdate" class="overlay hidden">
         <form class="form">
           <div class="form-title-group">
             <h4 class="form-title">Cập nhật danh mục</h4>
-            <i class="fa-solid fa-x"></i>
+            <button id="btnClose" class="btn-close">
+              <i class="fa-solid fa-x"></i>
+            </button>
           </div>
           <div class="form-container form-error">
             <label class="form-item">Mã danh mục <span>*</span></label>
-            <input type="text" placeholder="DM001" />
-            <p class="input-error">Mã danh mục không được để trống</p>
+            <input id="categoryId" class="form-input" type="text" />
+            <p id="categoryIdError" class="hidden text-error">
+              Mã danh mục không được để trống
+            </p>
           </div>
           <div class="form-container form-error">
             <label class="form-item" for="">Tên danh mục <span>*</span></label>
-            <input type="text" placeholder="Quần áo" />
-            <p class="input-error">Tên danh mục không được để trống</p>
+            <input id="categoryName" class="form-input" type="text" />
+            <p id="categoryNameError" class="hidden text-error">
+              Tên danh mục không được để trống
+            </p>
           </div>
 
           <div class="checkbox-container">
             <label class="form-item" for="">Trạng thái</label>
-            <div class="checkbox-group">
+            <p id="message"></p>
+            <div id="checkboxGroup" class="checkbox-group">
               <div class="checkbox">
-                <input type="radio" value="" />
-                <label> Đang hoạt động </label>
+                <input
+                  name="status"
+                  id="active"
+                  type="radio"
+                  value=""
+                  checked
+                />
+                <label for="active"> Đang hoạt động </label>
               </div>
               <div class="checkbox">
-                <input type="radio" value="" />
-                <label> Ngừng hoạt động </label>
+                <input name="status" id="inActive" type="radio" value="" />
+                <label for="inActive"> Ngừng hoạt động </label>
               </div>
             </div>
           </div>
+          <p id="message"></p>
+
           <div class="button-group">
-            <button class="btn-overlay">Hủy</button>
-            <button class="btn-overlay">Thêm</button>
+            <button id="btnCancel" class="btn-overlay">Hủy</button>
+            <button id="btnAddCategory" class="btn-overlay">Lưu</button>
           </div>
         </form>
-      </div> -->
+      </div>
     </div>
+    <!-- Script -->
+    <script src="../js/aside.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/pagination.js"></script>
     <script src="../js/manager_category.js"></script>
+
+    <!-- Gán phần chuỗi HTML vào component -->
+    <script>
+      document.querySelector("#menu-component").innerHTML =
+        renderAside("manager-category");
+
+      document.querySelector("#header-component").innerHTML =
+        renderHeader("manager-category");
+
+      document.querySelector("#pagination-component").innerHTML =
+        renderPagination("manager-category");
+    </script>
   </body>
 </html>
