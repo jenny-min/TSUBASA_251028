@@ -25,7 +25,6 @@ categoryStatues.forEach(function (item) {
         // Input nào được checked, thì sẽ lấy giá trị của input đó
         if (event.target.checked) {
             categoryStatusValue = event.target.value;
-            categoryStatusValue.classList.add("active");
         }
     });
 });
@@ -151,6 +150,7 @@ function handleEditCategory(id) {
     handleShowModal();
 }
 
+// Hàm reset lại form sau khi submit
 function resetForm() {
     editingId = null;
     categoryCodeInput.value = "";
@@ -188,7 +188,7 @@ function renderCategories() {
         <td>${category.code}</td>
         <td>${category.name}</td>
         <td>
-            <div class="box-status">
+            <div class="box-status" checked>
                 <div class="dot"></div>
                 <span class="status-text">${statusText}</span>
             </div>

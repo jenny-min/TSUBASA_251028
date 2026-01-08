@@ -69,16 +69,11 @@ ul li {
     color: #3F3F46;
 }
 
-.aside .aside-list:hover {
-    color: #0E73F6;
+.aside-active {
+    color: #0E73F6!important;
     background-color: #D7EDFF;
     border-radius: 6px;
-}
-
-.aside .aside-list:active {
-    color: #0E73F6;
-    background-color: #D7EDFF;
-    border-radius: 6px;
+    font-weight: 600;
 }
 
 .aside-title {

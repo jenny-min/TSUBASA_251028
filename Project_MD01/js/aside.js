@@ -19,7 +19,7 @@ function renderAside(keyActive) {
             name: "Quản lý sản phẩm",
             link: "../pages/manager_product.html",
             icon: '<i class="fa-solid fa-folder"></i>',
-        },
+        }
     ];
 
     // Nối chuỗi HTML trong aside
@@ -33,7 +33,7 @@ function renderAside(keyActive) {
     // Nối chuỗi kèm theo sử lý logic và gắn các dữ liệu động
     asideItems.forEach(function (item) {
         asideHTML += `
-        <a href="${item.link}" class="aside-list ${keyActive === item.key ? "active" : ""}">
+        <a href="${item.link}" class="aside-list ${keyActive === item.key ? "aside-active" : ""}">
             ${item.icon}
             <p class="list-item">${item.name}</p>
           </a>
