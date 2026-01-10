@@ -25,6 +25,7 @@ categoryStatues.forEach(function (item) {
         // Input nào được checked, thì sẽ lấy giá trị của input đó
         if (event.target.checked) {
             categoryStatusValue = event.target.value;
+            // Thêm class active
         }
     });
 });
@@ -75,18 +76,6 @@ function validateCategory(codeValue, nameValue, editingId = null) {
         isValid = false;
     }
 
-    // Kiểm tra trùng tên, không phân biệt hoa thường, khoảng trống
-    const isDuplicateName = categories.some(item =>
-        item.name.toLowerCase() === nameValue.toLowerCase() &&
-        item.id !== editingId
-    );
-
-    if (isDuplicateName) {
-        categoryNameError.style.display = "block";
-        categoryNameError.innerHTML = "Tên danh mục đã tồn tại";
-        isValid = false;
-    }
-
     // Nếu có lỗi thì dừng
     return isValid;
 }
@@ -99,12 +88,13 @@ function handleSubmit(event) {
     const codeValue = categoryCodeInput.value.trim();
     const nameValue = categoryNameInput.value.trim();
 
-    // Validate chung
+    // Validate dữ liệu chung thông qua hàm validateCategory trước đó, kiểm tra xong thì kết thúc hàm bằng return
     if (!validateCategory(codeValue, nameValue, editingId)) return;
 
-    // editing = null thì mơt form thêm mới, không thì mở form cập nhật
+    // editing = null thì thêm mới, không thì cập nhật
     if (editingId === null) {
-        // Thêm mới
+        // Thêm mới, dùng unshift để thêm vào đầu danh sách. 
+        // Thêm mới cái object với những giá trị bên dưới vào mảng categories lưu trên local thông qua phương thức unshift
         categories.unshift({
             id: Math.ceil(Math.random() * 10000000),
             code: codeValue,
@@ -113,9 +103,12 @@ function handleSubmit(event) {
         });
     } else {
         //Cập nhật
+        // ý tưởng: nếu id trong categories ở vị trí thứ i trùng với editingId thì sửa thông tin ở vị trí thứ i, nên cần có 1 biến index để gắn giá trị mới cho id vị trí thứ i
         const index = categories.findIndex(item => item.id === editingId);
         categories[index] = {
             ...categories[index],
+            // ...: sao chép toàn bộ thuộc tính cũ của object
+            // cập nhật thuộc tính mới của object
             code: codeValue,
             name: nameValue,
             status: categoryStatusValue,
@@ -137,17 +130,52 @@ function handleSubmit(event) {
 
 // Hàm sửa danh mục
 function handleEditCategory(id) {
-    const category = categories.find(item => item.id === id);
-    if (!category) return;
+    // Ngăn chặn sự kiện load lại trang
+    id.preventDefault();
 
-    editingId = id;
+    const codeValue = categoryCodeInput.value.trim();
+    const nameValue = categoryNameInput.value.trim();
 
-    categoryCodeInput.value = category.code;
-    categoryNameInput.value = category.name;
-    document.querySelector(`input[name="status"][value="${category.status}"]`).checked = true;
-    categoryStatusValue = category.status;
+    // Validate dữ liệu chung thông qua hàm validateCategory trước đó, kiểm tra xong thì kết thúc hàm bằng return
+    if (!validateCategory(codeValue, nameValue, editingId)) return;
 
-    handleShowModal();
+    // editing = null thì thêm mới, không thì cập nhật
+    if (editingId !== null) {
+        //Cập nhật
+        // ý tưởng: nếu id trong categories ở vị trí thứ i trùng với editingId thì sửa thông tin ở vị trí thứ i, nên cần có 1 biến index để gắn giá trị mới cho id vị trí thứ i
+
+        const index = categories.findIndex(item => item.id === editingId);
+        categories[index] = {
+            ...categories[index],
+            // ...: sao chép toàn bộ thuộc tính cũ của object
+            // cập nhật thuộc tính mới của object
+            code: codeValue,
+            name: nameValue,
+            status: categoryStatusValue,
+        };
+    }
+
+    // Lưu dữ liệu lên local
+    localStorage.setItem("categories", JSON.stringify(categories));
+
+    // reset lại form
+    resetForm();
+
+    // Đóng form
+    handleCloseModal();
+
+    // Render lại danh sách mới nhất
+    renderCategories();
+    // const category = categories.find(item => item.id === id);
+    // if (!category) return;
+
+    // editingId = id;
+
+    // categoryCodeInput.value = category.code;
+    // categoryNameInput.value = category.name;
+    // document.querySelector(`input[name="status"][value="${category.status}"]`).checked = true;
+    // categoryStatusValue = category.status;
+    // renderCategories();
 }
 
 // Hàm reset lại form sau khi submit
@@ -164,6 +192,9 @@ function resetForm() {
 
 // Hàm xóa danh mục
 function handleDeleteCategory(id) {
+    if (!confirm) {
+
+    }
     if (!confirm("Bạn có chắc chắn muốn xóa danh mục này không?")) return;
 
     categories = categories.filter(item => item.id !== id);

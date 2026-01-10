@@ -369,6 +369,80 @@ ul li {
     width: 410px;
 }
 
+/* form delete */
+.form-delete {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    background-color: var(--background-white);
+    border-radius: 8px;
+    width: 500px;
+    padding: 24px;
+}
+
+.warning {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid #E4E4E7;
+}
+.icon-warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEE4E2;
+    color: #D92D20;
+    font-size: 24px;
+    border-radius: 50%;
+    border: none;
+    height: 48px;
+    width: 48px;    
+}
+.text-waring {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.warning-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #101828;
+}
+.btn-warning {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+}
+.btnCancel {
+    color: #344054;
+    background-color: var(--background-white);
+}
+.btnCancel:hover {
+    color: #000000;
+    background-color: #dadbdc;
+    transition: 0.3s;
+}
+.btnDelete {
+    color: var(--background-white);
+    background-color: #D92D20;
+    border: 1px solid transparent;
+}
+.btnDelete:hover{
+    color: var(--background-white);
+    background-color: #cb3a30;
+}
+
 .mb-24 {
     margin-bottom: 24px;
 }
