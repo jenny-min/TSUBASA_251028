@@ -1,6 +1,7 @@
 // Các phần tử trong DOM
 const formCategory = document.querySelector("#form-add-category");
 const formUpdateCategory = document.querySelector("#form-update-category");
+const formDeleteCategory = document.querySelector("form-delete-category");
 const categoryCodeInput = document.querySelector("#category-code");
 const categoryNameInput = document.querySelector("#category-name");
 const tbodyElement = document.querySelector("#tbody");
@@ -103,7 +104,7 @@ function handleSubmit(event) {
         });
     } else {
         //Cập nhật
-        // ý tưởng: nếu id trong categories ở vị trí thứ i trùng với editingId thì sửa thông tin ở vị trí thứ i, nên cần có 1 biến index để gắn giá trị mới cho id vị trí thứ i
+        // nếu id trong categories ở vị trí thứ i trùng với editingId thì sửa thông tin ở vị trí thứ i, nên cần có 1 biến index để gắn giá trị mới cho id vị trí thứ i
         const index = categories.findIndex(item => item.id === editingId);
         categories[index] = {
             ...categories[index],
@@ -130,8 +131,6 @@ function handleSubmit(event) {
 
 // Hàm sửa danh mục
 function handleEditCategory(id) {
-    // Ngăn chặn sự kiện load lại trang
-    id.preventDefault();
 
     const codeValue = categoryCodeInput.value.trim();
     const nameValue = categoryNameInput.value.trim();
@@ -192,13 +191,14 @@ function resetForm() {
 
 // Hàm xóa danh mục
 function handleDeleteCategory(id) {
-    if (!confirm) {
 
-    }
-    if (!confirm("Bạn có chắc chắn muốn xóa danh mục này không?")) return;
+    // if (!confirm("Bạn có chắc chắn muốn xóa danh mục này không?")) return;
 
     categories = categories.filter(item => item.id !== id);
     localStorage.setItem("categories", JSON.stringify(categories));
+
+    handleCloseModal();
+
     renderCategories();
 }
 
