@@ -8,14 +8,14 @@ const categoryNameInput = document.querySelector("#category-name");
 const updateCodeInput = document.querySelector("#categoryId");
 const updateNameInput = document.querySelector("#categoryName");
 const tbodyElement = document.querySelector("#tbody");
+
+const searchInput = document.querySelector("#searchInput");
+let keyword = "";
+
 // Lấy ra danh sách các radio có name=status
 const categoryStatues = document.querySelectorAll("input[name=status]");
-const categoryAddStatues = document.querySelectorAll("input[name=status-add]");
-const categoryUpdateStatues = document.querySelectorAll("input[name=status-update]");
-
-// Biến toàn cục
-
-
+const categoryAddStatus = document.querySelectorAll("input[name=status-add]");
+const categoryUpdateStatus = document.querySelectorAll("input[name=status-update]");
 
 // Các phần tử liên quan đến lỗi
 const categoryCodeError = document.querySelector("#categoryCodeError");
@@ -27,8 +27,9 @@ let categoryStatusValue = "active";
 let deleteId = null;
 let editingId = null; // null = thêm mới | có id = đang sửa
 
-// Mảng chứa danh sách danh mục
+// Lấy dữ liệu từ localStorage
 let categories = JSON.parse(localStorage.getItem("categories")) || [];
+let products = JSON.parse(localStorage.getItem("products")) || [];
 
 // Lắng nghe sự kiện thay đổi khi người dùng chọn trạng thái
 categoryUpdateStatues.forEach(function (item) {
@@ -39,6 +40,26 @@ categoryUpdateStatues.forEach(function (item) {
             categoryStatusValue = event.target.value;
         }
     });
+});
+
+// Lắng nghe thay đổi radio trạng thái thêm mới
+categoryAddStatus.forEach(function (item) {
+    item.addEventListener("change", function (e) {
+        if (e.target.checked) categoryStatusValue = e.target.value;
+    });
+});
+
+// Lắng nghe thay đổi radio trạng thái cập nhật
+categoryUpdateStatus.forEach(function (item) {
+    item.addEventListener("change", function (e) {
+        if (e.target.checked) categoryStatusValue = e.target.value;
+    });
+});
+
+// Lắng nghe tìm kiếm theo tên
+searchInput.addEventListener("input", function (e) {
+    keyword = e.target.value.toLowerCase().trim();
+    renderCategories();
 });
 
 // Hàm mở modal thêm mới/ cập nhật danh mục
@@ -215,10 +236,20 @@ function resetForm() {
 function handleDeleteCategory(event) {
     event.preventDefault();
 
+    // Kiểm tra danh mục có sản phẩm hay không
+    const hasProduct = products.some(
+        product => product.categoryId === deletingId
+    );
+
+    if (hasProduct) {
+        messageError.innerHTML = "Không thể xóa danh mục vì đang chứa sản phẩm!";
+        return;
+    }
+
     categories = categories.filter(item => item.id !== deleteId);
     localStorage.setItem("categories", JSON.stringify(categories));
-
     deleteId = null;
+
     handleCloseModal();
     renderCategories();
 }
@@ -227,6 +258,13 @@ function handleDeleteCategory(event) {
 function renderCategories() {
     // Xóa tbody cũ
     tbodyElement.innerHTML = "";
+
+    // Tìm kiếm
+    const filteredCategories = categories.filter(category => {
+        return (
+            category.name.toLowerCase().includes(keyword)
+        );
+    });
 
     // Duyệt qua mảng categories
     categories.forEach(function (category) {
