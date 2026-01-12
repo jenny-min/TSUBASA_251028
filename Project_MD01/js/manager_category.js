@@ -5,29 +5,38 @@ const formDeleteCategory = document.querySelector("#form-delete-category");
 
 const categoryCodeInput = document.querySelector("#category-code");
 const categoryNameInput = document.querySelector("#category-name");
+const updateCodeInput = document.querySelector("#categoryId");
+const updateNameInput = document.querySelector("#categoryName");
 const tbodyElement = document.querySelector("#tbody");
 // Lấy ra danh sách các radio có name=status
 const categoryStatues = document.querySelectorAll("input[name=status]");
-let categoryStatusValue = "active";
+const categoryAddStatues = document.querySelectorAll("input[name=status-add]");
+const categoryUpdateStatues = document.querySelectorAll("input[name=status-update]");
+
+// Biến toàn cục
+
+
 
 // Các phần tử liên quan đến lỗi
 const categoryCodeError = document.querySelector("#categoryCodeError");
 const categoryNameError = document.querySelector("#categoryNameError");
+const messageError = document.querySelector("#message");
 
 // Biến toàn cục
+let categoryStatusValue = "active";
+let deleteId = null;
 let editingId = null; // null = thêm mới | có id = đang sửa
 
 // Mảng chứa danh sách danh mục
 let categories = JSON.parse(localStorage.getItem("categories")) || [];
 
 // Lắng nghe sự kiện thay đổi khi người dùng chọn trạng thái
-categoryStatues.forEach(function (item) {
+categoryUpdateStatues.forEach(function (item) {
     //   Lắng nghe sự kiện khi người dùng change
     item.addEventListener("change", function (event) {
         // Input nào được checked, thì sẽ lấy giá trị của input đó
         if (event.target.checked) {
             categoryStatusValue = event.target.value;
-            // Thêm class active
         }
     });
 });
@@ -37,17 +46,23 @@ function handleShowModal() {
     // Thay đổi style để hiển thị form thêm mới danh mục
     formCategory.style.display = "flex";
 }
-function handleShowModalUpdate() {
+function handleShowModalUpdate(id) {
+    const category = categories.find(item => item.id === id);
+    if (!category) return;
+
+    editingId = id;
+
+    updateCodeInput.value = category.code;
+    updateNameInput.value = category.name;
+    categoryStatusValue = category.status;
+
     // Thay đổi style để hiển thị form cập nhật
     formUpdateCategory.style.display = "flex";
 }
-
-function handleShowModalDelete() {
-    // Thay đổi style để hiển thị form xóa
+function handleShowModalDelete(id) {
+    deleteId = id;
     formDeleteCategory.style.display = "flex";
-
 }
-
 
 // Hàm đóng modal thêm mới / cập nhật danh mục
 function handleCloseModal() {
@@ -145,6 +160,7 @@ function handleSubmit(event) {
 
 // Hàm sửa danh mục
 function handleEditCategory(event) {
+    event.preventDefault();
 
     const codeValue = categoryCodeInput.value.trim();
     const nameValue = categoryNameInput.value.trim();
@@ -158,6 +174,7 @@ function handleEditCategory(event) {
         // ý tưởng: nếu id trong categories ở vị trí thứ i trùng với editingId thì sửa thông tin ở vị trí thứ i, nên cần có 1 biến index để gắn giá trị mới cho id vị trí thứ i
 
         const index = categories.findIndex(item => item.id === editingId);
+        if (index === -1) return;
         categories[index] = {
             ...categories[index],
             // ...: sao chép toàn bộ thuộc tính cũ của object
@@ -184,9 +201,10 @@ function handleEditCategory(event) {
 // Hàm reset lại form sau khi submit
 function resetForm() {
     editingId = null;
+    deletingId = null;
     categoryCodeInput.value = "";
     categoryNameInput.value = "";
-    document.querySelector("input[name=status][value=active]").checked = true;
+    document.querySelector("input[name=status-add][value=active]").checked = true;
     categoryStatusValue = "active";
 
     categoryCodeError.style.display = "none";
@@ -194,19 +212,14 @@ function resetForm() {
 }
 
 // Hàm xóa danh mục
-function handleDeleteCategory(id) {
+function handleDeleteCategory(event) {
+    event.preventDefault();
 
-    if (!confirm) {
-        formDeleteCategory.style.display = "block";
-    } else {
-        formDeleteCategory.style.display = "none";
-    }
-
-    // if (!confirm("Bạn có chắc chắn muốn xóa danh mục này không?")) return;
-    categories = categories.filter(item => item.id !== id);
+    categories = categories.filter(item => item.id !== deleteId);
     localStorage.setItem("categories", JSON.stringify(categories));
-    handleCloseModal();
 
+    deleteId = null;
+    handleCloseModal();
     renderCategories();
 }
 
@@ -233,8 +246,8 @@ function renderCategories() {
             </div>
         </td>
         <td>
-            <button onsumit="handleDeleteCategory(${category.id})" onclick="handleShowModalDelete(${category.id})"><i class="fa-solid fa-trash"></i></button>
-            <button onsumit="handleEditCategory(${category.id})" onclick="handleShowModalUpdate(${category.id})"><i class="fa-solid fa-pen"></i></button>
+            <button onclick="handleShowModalDelete(${category.id})"><i class="fa-solid fa-trash"></i></button>
+            <button onclick="handleShowModalUpdate(${category.id})"><i class="fa-solid fa-pen"></i></button>
         </td>
     `;
 
