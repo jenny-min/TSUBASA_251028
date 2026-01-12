@@ -1,9 +1,10 @@
-const productElement = document.querySelector("#products");
-const productInfoElement = document.querySelector("#product-info");
-console.log("productInfoElement", productInfoElement);
+const productElement = document.querySelector("#products-component");
+
+// console.log("productElement", productElement);
 
 // Hàm trả render sản phẩm (fix cứng dữ liệu)
 function renderProducts(e) {
+    // Mảng fix cứng
     const products = [
         {
             id: "1",
@@ -14,7 +15,7 @@ function renderProducts(e) {
             price: 900,
             discount: 0,
             image: "../utils/images/product_manager_images/products/Iphone-14-pro-1.png",
-            status: "ACTIVE",
+            status: "active",
             description: "",
         },
         {
@@ -26,7 +27,7 @@ function renderProducts(e) {
             price: 2535,
             discount: 0,
             image: "../utils/images/product_manager_images/products/Blackmagic-Pocket-Cinema-Camera-6k.png",
-            status: "ACTIVE",
+            status: "active",
             description: "",
         },
         {
@@ -38,7 +39,7 @@ function renderProducts(e) {
             price: 399,
             discount: 0,
             image: "../utils/images/product_manager_images/products/Apple-Watch-Series-9.png",
-            status: "ACTIVE",
+            status: "active",
             description: "",
         },
         {
@@ -50,7 +51,7 @@ function renderProducts(e) {
             price: 549,
             discount: 0,
             image: "../utils/images/product_manager_images/products/AirPods-Max.png",
-            status: "ACTIVE",
+            status: "active",
             description: "",
         },
         {
@@ -62,7 +63,7 @@ function renderProducts(e) {
             price: 369,
             discount: 0,
             image: "../utils/images/product_manager_images/products/Samsung-Galaxy-Watch6-Classic.png",
-            status: "ACTIVE",
+            status: "active",
             description: "",
         },
 
@@ -75,7 +76,7 @@ function renderProducts(e) {
             price: 1799,
             discount: 0,
             image: "../utils/images/product_manager_images/products/GalaxyZ-Fold5-Phantom.png",
-            status: "ACTIVE",
+            status: "active",
             description: "",
         },
         {
@@ -87,7 +88,7 @@ function renderProducts(e) {
             price: 99.99,
             discount: 0,
             image: "../utils/images/product_manager_images/products/Galaxy-Buds-FE-Graphite.png",
-            status: "ACTIVE",
+            status: "active",
             description: "",
         },
         {
@@ -99,44 +100,44 @@ function renderProducts(e) {
             price: 398,
             discount: 0,
             image: "../utils/images/product_manager_images/products/Apple-iPad-9.png",
-            status: "ACTIVE",
+            status: "active",
             description: "",
         },
     ];
 
-    const divElement = document.createElement("div");
+    // Duyệt qua mảng categories
+    products.forEach(function (product) {
+        // Convert trạng thái từ tiếng anh sang tiếng việt
+        const statusText =
+            category.status === "active" ? "Đang hoạt động" : "Ngừng hoạt động";
+        // Tạo 1 thẻ tr
+        const trElement = document.createElement("tr");
 
-    let productInfoElement = `
-        <div class="product-card">
-            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
-            `;
-    divElement.innerHTML =
-        productInfoElement +=
+        trElement.innerHTML = `
+                <td>${product.product_code}</td>
+                <td>${product.product_name}}</td>
+                <td>$${product.price}</td>
+                <td>${product.stock}</td>
+                <td>${product.discount}%</td>
 
-        // Duyệt qua mảng products
-        products.forEach(function (item) {
-            productInfoElement += `<div id="product-info">
-            <img
-              class="product-img"
-              src="${item.image}"
-              alt="${item.description}"
-            />
+                <td>
+                    <div class="box-status bg-active">
+                      <div class="dot dot-active"></div>
+                      <span class="status-text text-active"
+                        >${statusText}</span
+                      >
+                    </div>
+                </td>
+                <td>
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-pen"></i>
+                </td>
+    `;
 
-            <h3 class="product-description">
-              ${item.product_name}
-            </h3>
-            <p class="product-price">$${item.price}</p>
-            </div>
-        `
-        });
-
-
-    productInfoElement +=
-        `<button class="btn-semi-black">Mua ngay</button>
-          </div>
-        `
-
-    // Gán từng thẻ tr đã có dữ liệu vào trong tbody
-    productElement.appendChild(divElement);
+        // Gán từng thẻ tr đã có dữ liệu vào trong tbody
+        tbodyElement.appendChild(trElement);
+    });
+    return tbodyElement;
 }
+// renderProducts();
 
