@@ -2,6 +2,7 @@
 const formCategory = document.querySelector("#form-add-category");
 const formUpdateCategory = document.querySelector("#form-update-category");
 const formDeleteCategory = document.querySelector("form-delete-category");
+
 const categoryCodeInput = document.querySelector("#category-code");
 const categoryNameInput = document.querySelector("#category-name");
 const tbodyElement = document.querySelector("#tbody");
@@ -130,7 +131,7 @@ function handleSubmit(event) {
 }
 
 // Hàm sửa danh mục
-function handleEditCategory(id) {
+function handleEditCategory(event) {
 
     const codeValue = categoryCodeInput.value.trim();
     const nameValue = categoryNameInput.value.trim();
@@ -191,6 +192,13 @@ function resetForm() {
 
 // Hàm xóa danh mục
 function handleDeleteCategory(id) {
+
+    if (!confirm) {
+        formDeleteCategory.style.display = "block";
+
+    } else {
+        formDeleteCategory.style.display = "none";
+    }
 
     // if (!confirm("Bạn có chắc chắn muốn xóa danh mục này không?")) return;
 
