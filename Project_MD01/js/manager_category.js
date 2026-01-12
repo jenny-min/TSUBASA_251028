@@ -1,7 +1,7 @@
 // Các phần tử trong DOM
 const formCategory = document.querySelector("#form-add-category");
 const formUpdateCategory = document.querySelector("#form-update-category");
-const formDeleteCategory = document.querySelector("form-delete-category");
+const formDeleteCategory = document.querySelector("#form-delete-category");
 
 const categoryCodeInput = document.querySelector("#category-code");
 const categoryNameInput = document.querySelector("#category-name");
@@ -37,11 +37,24 @@ function handleShowModal() {
     // Thay đổi style để hiển thị form thêm mới danh mục
     formCategory.style.display = "flex";
 }
+function handleShowModalUpdate() {
+    // Thay đổi style để hiển thị form cập nhật
+    formUpdateCategory.style.display = "flex";
+}
+
+function handleShowModalDelete() {
+    // Thay đổi style để hiển thị form xóa
+    formDeleteCategory.style.display = "flex";
+
+}
+
 
 // Hàm đóng modal thêm mới / cập nhật danh mục
 function handleCloseModal() {
     // Thay đổi style để ẩn form thêm mới danh mục
     formCategory.style.display = "none";
+    formUpdateCategory.style.display = "none";
+    formDeleteCategory.style.display = "none";
     resetForm();
 }
 
@@ -166,16 +179,6 @@ function handleEditCategory(event) {
 
     // Render lại danh sách mới nhất
     renderCategories();
-    // const category = categories.find(item => item.id === id);
-    // if (!category) return;
-
-    // editingId = id;
-
-    // categoryCodeInput.value = category.code;
-    // categoryNameInput.value = category.name;
-    // document.querySelector(`input[name="status"][value="${category.status}"]`).checked = true;
-    // categoryStatusValue = category.status;
-    // renderCategories();
 }
 
 // Hàm reset lại form sau khi submit
@@ -195,16 +198,13 @@ function handleDeleteCategory(id) {
 
     if (!confirm) {
         formDeleteCategory.style.display = "block";
-
     } else {
         formDeleteCategory.style.display = "none";
     }
 
     // if (!confirm("Bạn có chắc chắn muốn xóa danh mục này không?")) return;
-
     categories = categories.filter(item => item.id !== id);
     localStorage.setItem("categories", JSON.stringify(categories));
-
     handleCloseModal();
 
     renderCategories();
@@ -233,8 +233,8 @@ function renderCategories() {
             </div>
         </td>
         <td>
-            <button onclick="handleDeleteCategory(${category.id})"><i class="fa-solid fa-trash"></i></button>
-            <button onclick="handleEditCategory(${category.id})"><i class="fa-solid fa-pen"></i></button>
+            <button onsumit="handleDeleteCategory(${category.id})" onclick="handleShowModalDelete(${category.id})"><i class="fa-solid fa-trash"></i></button>
+            <button onsumit="handleEditCategory(${category.id})" onclick="handleShowModalUpdate(${category.id})"><i class="fa-solid fa-pen"></i></button>
         </td>
     `;
 
