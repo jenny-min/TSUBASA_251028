@@ -508,10 +508,17 @@ ul li {
 }
 
 .form-footer {
-    border-top: 1px solid #A1A1AA;
     padding-top: 24px;
     display: flex;
     flex-direction: column;
+    justify-content: right;
+    gap: 12px;
+}
+
+.form-footer-button {
+    border-top: 1px solid #A1A1AA;
+    padding-top: 24px;
+    display: flex;
     justify-content: right;
     gap: 12px;
 }
