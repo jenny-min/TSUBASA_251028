@@ -32,7 +32,7 @@ let categories = JSON.parse(localStorage.getItem("categories")) || [];
 let products = JSON.parse(localStorage.getItem("products")) || [];
 
 // Lắng nghe sự kiện thay đổi khi người dùng chọn trạng thái
-categoryUpdateStatues.forEach(function (item) {
+categoryStatues.forEach(function (item) {
     //   Lắng nghe sự kiện khi người dùng change
     item.addEventListener("change", function (event) {
         // Input nào được checked, thì sẽ lấy giá trị của input đó
