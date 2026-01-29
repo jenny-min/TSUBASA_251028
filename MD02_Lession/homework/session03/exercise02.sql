@@ -106,3 +106,17 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2026-01-27 20:09:12
+
+
+-- Sơ đồ ERD ràng buộc 3 bảng
+
+-- +-----------------+        1       N  +-----------------+    N     1        +-----------------+
+-- |      books      |-------------------|   borrowings    |-------------------|     readers     |
+-- +-----------------+                   +-----------------+                   +-----------------+
+-- | book_id int PK  |                   | borrowing_id(PK)|                   | reader_id (PK)  |
+-- | title           |                   | reader_id       |                   | reader_name     |
+-- | author          |                   | book_id         |                   | email           |
+-- +-----------------+                   | borrow_date     |                   | phone           |
+--                                       | return_date     |                   +-----------------+
+--                                       +-----------------+                                      
+ 
