@@ -15,7 +15,7 @@ END $$
 DELIMITER ;
  
 -- Chèn sản phẩm hợp lệ
-INSERT INTO Products (product_name, quantity) VALUES ('Sản phẩm hợp lệ', 10);
+INSERT INTO Products (product_name, quantity) VALUES ('Iphone 17', 10);
 
 -- Chèn sản phẩm với quantity < 0 -> sẽ bị lỗi và không chèn được
-INSERT INTO Products (product_name, quantity) VALUES ('Sản phẩm lỗi', -5);
+INSERT INTO Products (product_name, quantity) VALUES ('Iphone 17', -5);
