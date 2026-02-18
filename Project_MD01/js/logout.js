@@ -1,11 +1,4 @@
 function handleLogout() {
-    // Chặn vào dashboard khi chưa đăng nhập
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-    if (!currentUser) {
-        window.location.href = "../pages/login.html";
-    }
-
     // Lấy ra element của trang
     const btnLogout = document.getElementById("btnLogout");
 

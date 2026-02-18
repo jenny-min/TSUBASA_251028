@@ -90,7 +90,7 @@ formLogin.addEventListener("submit", function (e) {
     if (!userFind) {
         // Nếu không thì thông báo cho người dùng nhập lại dữ liệu
         loginError.style.display = "block";
-        loginError.innerHTML = "Tài khoản khồn tồn tại";
+        loginError.innerHTML = "Tài khoản không tồn tại";
     } else {
         // Lưu user đăng nhập
         localStorage.setItem("currentUser", JSON.stringify(userFind));
