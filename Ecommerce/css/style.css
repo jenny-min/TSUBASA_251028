@@ -15,3 +15,14 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
