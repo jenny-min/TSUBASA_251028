@@ -4,6 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang sản phẩm</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="main-container">
+      <!-- Phần sidebar -->
+      <aside id="menu-component" class="aside"></aside>
+
+      <!-- Phần section category -->
+      <section class="section-container">
+        <header class="section-header">
+          <div id="header-component" class="header-nav"></div>
+          <div class="main">
+            <div class="header-toolbar">
+              <div class="header-title">
+                <h1 class="title">Sản phẩm</h1>
+                <button onclick="handleShowModal()" class="btn-add">
+                  Thêm mới sản phẩm
+                </button>
+              </div>
+              <!-- <div class="header-interaction">
+                <div class="status-bar">
+                  <select class="status-select" name="" id="">
+                    <option value="">Tất cả</option>
+                    <option value="" selected>Đang hoạt động</option>
+                    <option value="">Ngừng hoạt động</option>
+                  </select>
+                </div>
+                <div class="search-bar">
+                  <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Tìm kiếm danh mục theo tên"
+                  />
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </header>
+
+        <main class="section-main">
+          <!-- Phần sản phẩm -->
+           
+        </main>
+          
+        </main>
+        <!-- Pagination -->
+        <div id="pagination-component" class="pagination"></div>
+      </section>
+
+      <!-- Modal thê mới danh mục -->
+
+      <!-- Modal cập nhật danh mục -->
+
+      <!-- Modal xác nhận xóa -->
+    </div>
+    <!-- Script -->
+    <script src="../js/aside.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/pagination.js"></script>
+
+    <!-- Gán phần chuỗi HTML vào component -->
+    <script>
+      document.querySelector("#menu-component").innerHTML =
+        renderAside("product-manager");
+
+      document.querySelector("#header-component").innerHTML =
+        renderHeader("product-manager");
+
+      document.querySelector("#pagination-component").innerHTML =
+        renderPagination("product-manager");
+    </script>
+  </body>
 </html>

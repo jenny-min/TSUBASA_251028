@@ -11,13 +11,13 @@ function renderAside(keyActive) {
         {
             key: "manager-category",
             name: "Quản lý danh mục",
-            link: "../pages/manager_category.html",
+            link: "../pages/category_manager.html",
             icon: '<i class="fa-solid fa-money-bills"></i>',
         },
         {
             key: "manager-product",
             name: "Quản lý sản phẩm",
-            link: "../pages/manager_product.html",
+            link: "../pages/product_manager.html",
             icon: '<i class="fa-solid fa-folder"></i>',
         }
     ];
@@ -25,7 +25,7 @@ function renderAside(keyActive) {
     // Nối chuỗi HTML trong aside
     let asideHTML = `
     <div class="aside-header">
-        <img src="../utils/images/icons/ecommerce.png" alt="" >
+        <img src="../utils/icons/ecommerce.png" alt="" >
     </div>
     <div class="aside-body">
     `;
