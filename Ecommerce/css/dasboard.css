@@ -1,0 +1,20 @@
+.btn-log-out {
+    padding: 10px 16px;
+    color: #344054;
+    border: 1px solid #F2F4F7;
+    background-color: transparent;
+    border-radius: 8px;
+    width: 240px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.btn-log-out:hover {
+    color: #000000;
+    background-color: #F2F4F7;
+    transition: 0.3s;
+}
+
+.fa-arrow-right-from-bracket {
+    color: #344054!important;
+}
