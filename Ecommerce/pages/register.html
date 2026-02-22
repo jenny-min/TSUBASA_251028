@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="container">
-      <form id="formLogout" class="row">
+      <form id="formRegister" class="row">
         <header class="form-header">
           <h2 class="form-title">Đăng ký</h2>
           <div class="description">
@@ -28,22 +28,36 @@
               <label for="userFamilyName" class="form-label"
                 >Họ và tên đệm</label
               >
-              <input type="text" class="form-control" id="userFamilyName" />
+              <input
+                type="text"
+                class="form-control"
+                id="userFamilyName"
+                name="userFamilyName"
+              />
+              <p class="text-error" id="userFamilyNameError"></p>
             </div>
             <div class="col-md-6">
               <label for="userName" class="form-label">Tên</label>
-              <input type="text" class="form-control" id="userName" />
+              <input
+                type="text"
+                class="form-control"
+                id="userName"
+                name="userName"
+              />
+              <p class="text-error" id="userNameError"></p>
             </div>
           </div>
 
           <div class="col-auto">
             <label for="email" class="form-label">Email</label>
             <input
-              type="text"
+              type="email"
               class="form-control"
               id="email"
               placeholder="you@company.com"
+              name="email"
             />
+            <p class="text-error" id="emailError"></p>
           </div>
           <div class="col-auto">
             <label for="password" class="form-label">Mật khẩu</label>
@@ -52,23 +66,26 @@
               class="form-control"
               id="password"
               placeholder="password"
+              name="password"
             />
+            <p class="text-error" id="passwordError"></p>
           </div>
           <div class="col-auto">
-            <label for="inputAddress2" class="form-label"
-              >Xác nhận mật khẩu</label
-            >
+            <label for="rePassword" class="form-label">Xác nhận mật khẩu</label>
             <input
               type="password"
               class="form-control"
-              id="password"
-              placeholder="password"
+              id="rePassword"
+              placeholder="re-password"
+              name="rePassword"
             />
+            <p class="text-error" id="rePasswordError"></p>
           </div>
           <div class="form-function">
-            <input class="input-checkbox" type="checkbox" />
+            <input class="input-checkbox" type="checkbox" id="agree" />
             <span>Bạn đồng ý với <a href="">chính sách và điều khoản</a></span>
           </div>
+          <p id="message"></p>
         </main>
         <footer class="form-footer">
           <div class="col-12">
@@ -85,5 +102,7 @@
         </footer>
       </form>
     </div>
+    <!-- Script -->
+    <script src="../js/register.js"></script>
   </body>
 </html>

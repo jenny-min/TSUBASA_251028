@@ -61,6 +61,11 @@ ul li {
     transition: 0.3s;
 }
 
+.text-error {
+    color: #f6030f;
+    font-size: 16px;
+}
+
 /* Aside */
 .main-container {
     display: flex;

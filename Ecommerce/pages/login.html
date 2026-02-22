@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="container">
-      <form id="formLoging" class="form col-md-6">
+      <form id="formLogin" class="form col-md-6">
         <header class="form-header">
           <h2 class="form-title">Đăng nhập</h2>
           <div class="description">
@@ -36,6 +36,7 @@
               id="email"
               placeholder="Email"
             />
+            <p class="text-error" id="emailError"></p>
           </div>
           <div class="col-auto">
             <label for="formGroupExampleInput2" class="form-label"
@@ -47,6 +48,7 @@
               id="password"
               placeholder="Password"
             />
+            <p class="text-error" id="passwordError"></p>
           </div>
           <div class="col-12 form-function">
             <div class="form-check hidden-mobile">
@@ -66,6 +68,7 @@
             </div>
           </div>
         </main>
+        <p class="text-error" id="loginError"></p>
         <footer class="form-footer">
           <div class="col-12">
             <button type="submit" class="btn btn-primary btn-form">
